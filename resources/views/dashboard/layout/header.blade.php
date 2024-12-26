@@ -50,7 +50,21 @@
                     </ul>
                 </li>
                 <li class="nav-link-item"><a href="{{url('contactus')}}">Contact us</a></li>
+
+
+                @if (Auth::check())
+
+                <li class="nav-link ">
+               <a href="#"><button class="" >{{ Auth::user()->fname?? ""}}</button></a>
+                   <form action="{{ route('logout') }}" method="POST">
+                      @csrf
+                      <button class="" type="submit">Logout</button>
+                   </form>
+                </li>
+                @else
+  
                 <li class="nav-link-item"><a href="{{url('login')}}">Login</a></li>
+                @endif
             </ul>
         </div>
     </header>

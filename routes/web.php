@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [HomeController::class,'index']);
+Route::get('/', [HomeController::class,'index'])->name('index');
 Route::get('about', [HomeController::class,'aboutPage']);
 Route::get('category', [HomeController::class,'categoryPage']);
 Route::get('category-detail', [HomeController::class,'categoryDetailPage']);
@@ -32,6 +32,10 @@ Route::get('login', [AuthController::class,'loginPage']);
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 
 });
+
+
+// where to put your auth routes
+
 
 Route::group(['middleware' => 'auth'], function () {
     // Route::get('/sample-page',[HomeController::class, 'sample'])->name('sample');

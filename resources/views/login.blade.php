@@ -10,13 +10,33 @@
             </div>
         </div>
         <div class="col-md-6 mt-3">
-          <form action="" class="login-container">
+          @if(Session::has('error'))
+          <div class="alert alert-danger" role="alert">
+              {{ Session::get('error') }}
+          </div>
+      @endif
+          <form action="{{ route('login') }}"  method="POST" class="login-container">
+            @csrf
               <h4>Log In</h4>
               <label for="" class="form-label-show">Email Address</label>
-              <input type="text" class="form-input-show" placeholder="Enter email address...">
+              <input type="email" name="email" class="form-input-show" placeholder="Enter email address...">
+              <span class="text-danger">
+                @error('email')
+                   {{$message}}
+                @enderror
+              </span>
 
               <label for="" class="form-label-show mt-3">Password</label>
-              <input type="text" class="form-input-show" placeholder="Enter password...">
+              <div style="position: relative">
+                <input type="password" name="password" id="password" class="form-input-show" placeholder="Enter password...">
+                <i class="fa-solid fa-eye" id="togglePassword" style="position: absolute;right:10px; top:15px"></i>
+              </div>
+             
+              <span class="text-danger">
+                @error('password')
+                   {{$message}}
+                @enderror
+              </span>
 
               <div class="mt-3 form-check">
                 <input type="checkbox" class="form-check-input" id="logincheck">
@@ -29,5 +49,20 @@
         </div>
     </div>
 </div>
+
+
+<script>
+  document.getElementById('togglePassword').addEventListener('click', function () {
+      var passwordField = document.getElementById('password');
+      var passwordFieldType = passwordField.getAttribute('type');
+      if (passwordFieldType === 'password') {
+          passwordField.setAttribute('type', 'text');
+        
+      } else {
+          passwordField.setAttribute('type', 'password');
+        
+      }
+  });
+</script>
 
 @endsection
