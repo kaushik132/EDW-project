@@ -10,29 +10,63 @@
             </div>
         </div>
         <div class="col-md-6 mt-3">
-          <form action="" class="login-container">
+            @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+          <form action="{{ route('register') }}" method="POST" class="login-container">
+            @csrf
               <h4>Sign up</h4>
               <div class="row">
                 <div class="col-md-6 mt-2">
                     <label for="" class="form-label-show">First Name</label>
-                    <input type="text" class="form-input-show" placeholder="First Name...">
+                    <input type="text" name="fname" class="form-input-show" placeholder="First Name...">
+                    <span class="text-danger">
+                        @error('fname')
+                           {{$message}}
+                        @enderror
+                      </span>
                 </div>
                 <div class="col-md-6 mt-2">
                     <label for="" class="form-label-show">Last Name</label>
-                    <input type="text" class="form-input-show" placeholder="Last Name...">
+                    <input type="text" name="lname" class="form-input-show" placeholder="Last Name...">
+                    <span class="text-danger">
+                        @error('lname')
+                           {{$message}}
+                        @enderror
+                      </span>
                 </div>
                 <div class="col-md-12 mt-2">
                     <label for="" class="form-label-show">Email Address</label>
-                    <input type="text" class="form-input-show" placeholder="Enter email address...">
+                    <input type="email" name="email" class="form-input-show" placeholder="Enter email address...">
+                    <span class="text-danger">
+                        @error('email')
+                           {{$message}}
+                        @enderror
+                      </span>
                 </div>
                 <div class="col-md-12 mt-2">
                     <label for="" class="form-label-show">Password</label>
-                    <input type="text" class="form-input-show" placeholder="Enter password...">
+                    <div class="input-group" style="position: relative;">
+                        <input type="password" id="password" name="password" class="form-input-show" placeholder="Enter password...">
+                        <i class="fa-solid fa-eye" id="togglePassword" style="position: absolute;right:10px; top:15px"></i>
+                    </div>
+                    <span class="text-danger">
+                        @error('password')
+                           {{$message}}
+                        @enderror
+                    </span>
                 </div>
 
                 <div class="col-md-12 mt-2">
                     <label for="" class="form-label-show">Phone Number</label>
-                    <input type="text" class="form-input-show" placeholder="Phone Number...">
+                    <input type="text" name="phone" class="form-input-show" placeholder="Phone Number...">
+                    <span class="text-danger">
+                        @error('phone')
+                           {{$message}}
+                        @enderror
+                      </span>
                 </div>
               </div>
              
@@ -42,4 +76,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        var passwordField = document.getElementById('password');
+        var passwordFieldType = passwordField.getAttribute('type');
+        if (passwordFieldType === 'password') {
+            passwordField.setAttribute('type', 'text');
+          
+        } else {
+            passwordField.setAttribute('type', 'password');
+          
+        }
+    });
+</script>
 @endsection

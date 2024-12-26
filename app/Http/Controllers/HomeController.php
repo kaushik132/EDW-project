@@ -42,15 +42,7 @@ class HomeController extends Controller
         return view('digital-tool');
     }
 
-    public function loginPage()
-    {
-        return view('login');
-    }
-
-    public function signupPage()
-    {
-        return view('signup');
-    }
+   
 
     public function policyPage()
     {
