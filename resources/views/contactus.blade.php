@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">First Name <span class="span-icon-clr">*</span></label>
-                            <input type="text" name="fname" class="form-input-show" placeholder="First Name">
+                            <input type="text" name="fname" class="form-input-show" oninput="this.value = this.value.replace(/[^A-Za-z+.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="First Name">
                             <span class="text-danger">
                                 @error('fname')
                                    {{$message}}
@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Last Name <span class="span-icon-clr">*</span></label>
-                            <input type="text" name="lname" class="form-input-show" placeholder="Last Name">
+                            <input type="text" name="lname" class="form-input-show" oninput="this.value = this.value.replace(/[^A-Za-z+.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Last Name">
                             <span class="text-danger">
                                 @error('lname')
                                    {{$message}}
@@ -85,7 +85,7 @@
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Mobile Number <span class="span-icon-clr">*</span></label>
-                            <input type="text" name="phone" class="form-input-show" placeholder="Mobile Number">
+                            <input type="text" name="phone" maxlength="10" oninput="this.value = this.value.replace(/[^0-9+.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-input-show" placeholder="Mobile Number">
                             <span class="text-danger">
                                 @error('phone')
                                    {{$message}}
