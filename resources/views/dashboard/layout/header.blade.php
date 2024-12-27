@@ -55,7 +55,7 @@
                 @if (Auth::check())
 
                 <li class="nav-link ">
-               <a href="#"><button class="" >{{ Auth::user()->fname?? ""}}</button></a>
+               <a href="#"><button class="" >{{ Auth::user()->fname?? ""}}  {{Auth::user()->lname?? ""}}</button></a>
                    <form action="{{ route('logout') }}" method="POST">
                       @csrf
                       <button class="" type="submit">Logout</button>

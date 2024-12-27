@@ -53,58 +53,117 @@
                 </div>
 
                 <div class="col-md-7 mt-3">
+                    @if (session()->has('message'))
+                    <div class="alert alert-success">
+                       
+                       
+                       {{session()->get('message')}}
+                    </div>
+                        
+                    @endif
+                    <form action="{{route('contactus')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                   <div class="login-container">
                     <div class="row">
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">First Name <span class="span-icon-clr">*</span></label>
-                            <input type="text" class="form-input-show" placeholder="First Name">
+                            <input type="text" name="fname" class="form-input-show" placeholder="First Name">
+                            <span class="text-danger">
+                                @error('fname')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Last Name <span class="span-icon-clr">*</span></label>
-                            <input type="text" class="form-input-show" placeholder="Last Name">
+                            <input type="text" name="lname" class="form-input-show" placeholder="Last Name">
+                            <span class="text-danger">
+                                @error('lname')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Mobile Number <span class="span-icon-clr">*</span></label>
-                            <input type="text" class="form-input-show" placeholder="Mobile Number">
+                            <input type="text" name="phone" class="form-input-show" placeholder="Mobile Number">
+                            <span class="text-danger">
+                                @error('phone')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Email Address <span class="span-icon-clr">*</span></label>
-                            <input type="text" class="form-input-show" placeholder="Email Id">
+                            <input type="email" name="email" class="form-input-show" placeholder="Email Id">
+                            <span class="text-danger">
+                                @error('email')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
                       <div class="col-md-6 mt-2">
                         <label for="" class="form-label-show">Select <span class="span-icon-clr">*</span></label>
-                        <select name="" id="" class="form-input-show">
+                        <select name="select" id="" class="form-input-show">
                             <option value="" readonly>select</option>
-                            <option value="">Accounting & Finance</option>
+                            <option value="Accounting & Finance">Accounting & Finance</option>
                         </select>
+
                       </div>
     
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Deadline <span class="span-icon-clr">*</span></label>
-                            <input type="date" class="form-input-show">
+                            <input type="date" name="deadline" class="form-input-show">
+                            <span class="text-danger">
+                                @error('deadline')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
                         <div class="col-md-12 mt-2">
                             <label for="" class="form-label-show">Word Count <span class="span-icon-clr">*</span></label>
-                            <input type="number" class="form-input-show">
+                            <input type="number" name="word_count" class="form-input-show">
+                            <span class="text-danger">
+                                @error('word_count')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Upload Your Assignment <span class="span-icon-clr">*</span></label>
-                            <input type="file" class="form-input-show">
+                            <input type="file" name="image" class="form-input-show">
+                            <span class="text-danger">
+                                @error('image')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="" class="form-label-show">Check out Date <span class="span-icon-clr">*</span></label>
-                            <input type="date" class="form-input-show">
+                            <input type="date" name="check_out_date" class="form-input-show">
+                            <span class="text-danger">
+                                @error('check_out_date')
+                                   {{$message}}
+                                @enderror
+                              </span>
                         </div>
 
                         <div class="col-md-12 mt-2">
                             <label for="" class="form-label-show">Message <span class="span-icon-clr">*</span></label>
-                          <textarea name="" id="" cols="10" rows="4" placeholder="Your Message" class="form-input-show"></textarea>
+                          <textarea name="message" id="" cols="10" rows="4" placeholder="Your Message" class="form-input-show"></textarea>
+                            <span class="text-danger">
+                                @error('message')
+                                 {{$message}}
+                                @enderror
                         </div>
                       </div>
 
                       <div><button class="form-submit-btn">Submit</button></div>
                   </div>
+                </form>
                 </div>
+
+
+
             </div>
         </div>
     </section>

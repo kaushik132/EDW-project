@@ -19,6 +19,10 @@ Route::get('about', [HomeController::class,'aboutPage']);
 Route::get('category', [HomeController::class,'categoryPage']);
 Route::get('category-detail', [HomeController::class,'categoryDetailPage']);
 Route::get('contactus', [HomeController::class,'contactusPage']);
+
+Route::post('contactus', [HomeController::class,'contactusPost'])->name('contactus');
+
+
 Route::get('digital-tool', [HomeController::class,'digitalToolPage']);
 
 Route::get('policy', [HomeController::class,'policyPage']);
