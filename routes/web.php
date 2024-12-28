@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,5 +47,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+
+Route::get('sitemap.xml',[SitemapController::class, 'index']);
 
 // profile dashbord

@@ -27,16 +27,16 @@ class ContactUsController extends AdminController
         $grid = new Grid(new ContactUs());
 
         $grid->column('id', __('Id'));
-        $grid->column('fname', __('First Name'));
-        $grid->column('lname', __('Last Name'));
-        $grid->column('phone', __('Phone'));
-        $grid->column('email', __('Email'));
-        $grid->column('select', __('Select'));
-        $grid->column('deadline', __('Deadline'));
-        $grid->column('word_count', __('Word Count'));
-        $grid->column('image', __('File'));
-        $grid->column('check_out_date', __('Check Out Date'));
-        $grid->column('message', __('Message'));
+        $grid->column('image', __('file'))->image(url('/uploads/'), 100, 150)->sortable();
+        $grid->column('fname', __('First Name'))->sortable();
+        $grid->column('lname', __('Last Name'))->sortable();
+        $grid->column('phone', __('Phone'))->sortable();
+        $grid->column('email', __('Email'))->sortable();
+        $grid->column('select', __('Select'))->sortable();
+        $grid->column('deadline', __('Deadline'))->sortable();
+        $grid->column('word_count', __('Word Count'))->sortable();
+        $grid->column('check_out_date', __('Check Out Date'))->sortable();
+        $grid->column('message', __('Message'))->sortable();
         $grid->column('created_at', __('Created at'))->display(function ($created_at) {
             return \Carbon\Carbon::parse($created_at)->format('d M Y');
         });
