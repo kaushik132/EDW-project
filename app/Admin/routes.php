@@ -13,5 +13,7 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('contact-uses', ContactUsController::class);
+    $router->resource('categories', CategoryController::class);
+    $router->resource('cat-categories', CatCategoryController::class);
 
 });
