@@ -7,6 +7,7 @@ use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
 use \App\Models\Category;
+use \App\Models\CatCategory;
 
 class CategoryController extends AdminController
 {
@@ -27,7 +28,7 @@ class CategoryController extends AdminController
         $grid = new Grid(new Category());
 
      
-        $grid->column('category_id', __('Category id'))->sortable();
+        $grid->column('catCategory.name', __('Category id'))->sortable();
         $grid->column('title', __('Title'))->sortable();
       
         $grid->column('image', __('Image'))->image(url('/uploads/'), 100, 150)->sortable();
@@ -90,9 +91,16 @@ class CategoryController extends AdminController
     {
         $form = new Form(new Category());
 
-        $form->text('category_id', __('Category id'));
+
+        $form->select('category_id', __('Category id'))->options(CatCategory::pluck('name','id'))->default(null)->rules('required');
+
         $form->text('title', __('Title'));
-        $form->text('slug', __('Slug'));
+        $form->hidden('slug', __('Slug'));
+
+        $form->saving(function(Form $form){
+
+            $form->slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-',trim($form->title)));
+        });
         $form->text('short_content', __('Short content'));
         $form->text('view_user', __('View user'));
         $form->image('image', __('Image'));
