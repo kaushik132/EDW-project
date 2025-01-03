@@ -19,102 +19,41 @@
             </a>
 
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Filter 1</a></li>
-                <li><a class="dropdown-item" href="#">Filter 2</a></li>
-                <li><a class="dropdown-item" href="#">Filter 3</a></li>
+                @foreach ($cat as $catitem)
+                <li><a class="dropdown-item" href="{{url('category/'.$catitem->slug)}}">{{$catitem->name}}</a></li>
+                
+                @endforeach
+                <li><a class="dropdown-item" href="{{url('category')}}">All</a></li>
+              
             </ul>
         </div>
         <div class="row">
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                            <div class="category-content">
-                               <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque illum porro hic.</p>
-                               <a href="{{url('category-detail')}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
-                            </div>
+  
+@foreach ($categoryList as $categoryLists)
+    
+<div class="col-md-4 mt-3">
+    <div class="catergory-box">
+        <div><img
+                src="{{url('uploads/'.$categoryLists->image)}}"
+                alt="category-image" class="img-fluid"></div>
+                <div class="category-content">
+                   <h5>{{$categoryLists->title}}</h5>
+                   <p>{{$categoryLists->short_content}}</p>
+                   <a href="{{route('category-detail',$categoryLists->slug)}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
                 </div>
-            </div>
+    </div>
+</div>
+@endforeach
 
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                            <div class="category-content">
-                               <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque illum porro hic.</p>
-                               <a href="{{url('category-detail')}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
-                            </div>
-                </div>
-            </div>
+      
 
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                            <div class="category-content">
-                               <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque illum porro hic.</p>
-                              <a href="{{url('category-detail')}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
-                            </div>
-                </div>
-            </div>
+  
 
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                            <div class="category-content">
-                               <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque illum porro hic.</p>
-                              <a href="{{url('category-detail')}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
-                            </div>
-                </div>
-            </div>
+      
 
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                            <div class="category-content">
-                               <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque illum porro hic.</p>
-                              <a href="{{url('category-detail')}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
-                            </div>
-                </div>
-            </div>
+      
 
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                            <div class="category-content">
-                               <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque illum porro hic.</p>
-                              <a href="{{url('category-detail')}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
-                            </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                            <div class="category-content">
-                               <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque illum porro hic.</p>
-                              <a href="{{url('category-detail')}}"><div class="text-center"><button class="form-submit-btn">Learn-more</button></div></a>
-                            </div>
-                </div>
-            </div>
+        
         </div>
     </div>
 </section>

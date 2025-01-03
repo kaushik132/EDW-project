@@ -41,14 +41,24 @@
                         <li class="dropdown-menu-item"><a href="{{url('service')}}">Services Sub Menu 2</a></li>
                     </ul>
                 </li>
+
+                @php
+                    use \App\Models\CatCategory;
+                    $catcategory = CatCategory::all();
+                @endphp
                 <li class="nav-link-item dropdown-menu-branch">
                     <a href="{{url('category')}}" data-toggle="dropdown-menu">Category <i
                             class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-main-menu">
-                        <li class="dropdown-menu-item"><a href="{{url('category')}}">Category Sub Menu 1</a></li>
-                        <li class="dropdown-menu-item"><a href="{{url('category')}}">Category Sub Menu 2</a></li>
+                        @foreach ($catcategory as $catcategorys)
+                            
+                        <li class="dropdown-menu-item"><a href="{{url('category',$catcategorys->slug)}}">{{$catcategorys->name}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
+
+
+
                 <li class="nav-link-item"><a href="{{url('contactus')}}">Contact us</a></li>
 
 

@@ -15,5 +15,9 @@ Route::group([
     $router->resource('contact-uses', ContactUsController::class);
     $router->resource('categories', CategoryController::class);
     $router->resource('cat-categories', CatCategoryController::class);
+    $router->resource('services', ServiceController::class);
+    $router->resource('service-categories', ServiceCategoryController::class);
+    $router->resource('tool-categories', ToolCategoryController::class);
+    $router->resource('tools', ToolController::class);
 
 });

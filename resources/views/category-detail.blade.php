@@ -15,28 +15,34 @@
         <div class="row">
             <div class="col-md-8 mt-3">
                 <div class="category-content-detls">
-                    <div class="mb-4"><img src="https://finetechsolutions.in/wp-content/uploads/2024/04/banner-11.jpeg" alt="image"
+                    <div class="mb-4"><img src="{{url('uploads/'.$categoryData->image)}}" alt="{{$categoryData->alt}}"
                         class="img-fluid"></div>
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, laudantium?</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur modi dolorem earum voluptate
-                    minima eum commodi adipisci quam id aspernatur doloribus voluptas vitae, iste quis vero velit.
-                    Vel est nesciunt cum nisi, exercitationem esse quam nihil error tenetur iste, quis quos facere
-                    obcaecati id ipsa temporibus doloribus deleniti, incidunt amet.</p>
-                    <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis facilis ratione ducimus fugit unde magnam facere iste repellendus quo eaque, aperiam similique fugiat quidem, nostrum est explicabo accusamus, quisquam quasi.</p>
-                    <h6>Lorem ipsum dolor sit amet.</h6>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita itaque est nobis placeat temporibus officiis nihil asperiores nostrum animi quidem.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium doloribus libero in quas quae, ea commodi nobis modi voluptatibus iste.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates amet porro cupiditate itaque perferendis sunt.</li>
-                    </ul>
+                <h2>{{$categoryData->title}}</h2>
+                <p>{!!$categoryData->description!!}</p>
+                   
                     <div class="Share-icon-show">
                       <p class="mt-2">Share:</p>
-                      <a href="#"><i class="fab fa-x-twitter ms-2 text-dark fs-5"></i></a>
-                      <a href="#"><i class="fab fa-facebook-f ms-2 text-dark fs-5"></i></a>
-                      <a href="#"><i class="fab fa-instagram ms-2 text-dark fs-5"></i></a>
-                      <a href="#"><i class="fab fa-youtube ms-2 text-dark fs-5"></i></a>
-                      <a href="#"><i class="fab fa-linkedin-in ms-2 text-dark fs-5"></i></a>
+                      @if ($categoryData->twitter != null)
+                      <a href="{{$categoryData->twitter}}"><i class="fab fa-x-twitter ms-2 text-dark fs-5"></i></a>
+                          
+                      @endif
+                      @if ($categoryData->facebook != null)
+                          
+                      <a href="{{$categoryData->facebook}}"><i  class="fab fa-facebook-f ms-2 text-dark fs-5"></i></a>
+                      @endif
+                      @if ($categoryData->whatapp != null)
+                          
+                      <a href="{{$categoryData->whatapp}}"><i class="fa-brands fa-whatsapp ms-2 text-dark fs-5"></i></a>
+                      @endif
+                      @if ($categoryData->youtube != null)
+                          
+                      <a href="{{$categoryData->youtube}}"><i class="fab fa-youtube ms-2 text-dark fs-5"></i></a>
+                      @endif
+
+                      @if ($categoryData->linkedin != null)
+                          
+                      <a href="{{$categoryData->linkedin}}"><i class="fab fa-linkedin-in ms-2 text-dark fs-5"></i></a>
+                      @endif
                     </div>
                 </div>
             </div>
@@ -105,24 +111,14 @@
                 </div>
                 <div class="login-container mt-3">
                     <h5 class="text-center mb-4" style="color:#fa0009"><b>Popular Category</b></h5>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
+                   
+                
+                   @foreach ($catCategory as $category)
+                       
+                   <a href="{{url('category/'.$category->slug)}}" class="text-decoration-none">
+                       <p class="our-categroy-link">&#8594; {{$category->name}}</p>
+                   </a>
+                   @endforeach
                 </div>
 
                 <div class="login-container mt-3">
@@ -134,32 +130,27 @@
                                     <div class="category-icon-size"><img
                                             src="https://cdn-icons-png.flaticon.com/512/11772/11772904.png"
                                             class="img-fluid" alt="icon"></div>
-                                    <h5 class="text-center mt-3">Jhon Doe</h5>
+                                    <h5 class="text-center mt-3">Jon Luen</h5>
                                     <p class="text-center mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing
                                         elit. Voluptas non laborum quia placeat!</p>
                                 </div>
 
                             </div>
-                            <div class="carousel-item">
+                            @foreach ($categorylist as $itemcat)
+                            <div class="carousel-item ">
                                 <div>
                                     <div class="category-icon-size"><img
                                             src="https://cdn-icons-png.flaticon.com/512/11772/11772904.png"
                                             class="img-fluid" alt="icon"></div>
-                                    <h5 class="text-center mt-3">William Smith</h5>
-                                    <p class="text-center mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Voluptas non laborum quia placeat!</p>
+                                    <h5 class="text-center mt-3">{{$itemcat->title}}</h5>
+                                    <p class="text-center mt-2">{{$itemcat->short_content}}</p>
                                 </div>
+
                             </div>
-                            <div class="carousel-item">
-                                <div>
-                                    <div class="category-icon-size"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/11772/11772904.png"
-                                            class="img-fluid" alt="icon"></div>
-                                    <h5 class="text-center mt-3">Helen</h5>
-                                    <p class="text-center mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Voluptas non laborum quia placeat!</p>
-                                </div>
-                            </div>
+                                
+                            @endforeach
+                    
+                 
                         </div>
                         <button class="carousel-control-prev" type="button"
                             data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

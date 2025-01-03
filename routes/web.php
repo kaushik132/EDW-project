@@ -17,8 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [HomeController::class,'index'])->name('index');
 Route::get('about', [HomeController::class,'aboutPage']);
-Route::get('category', [HomeController::class,'categoryPage']);
-Route::get('category-detail', [HomeController::class,'categoryDetailPage']);
+
+
+Route::get('category/{slug?}', [HomeController::class,'categoryPage']);
+Route::get('category-detail/{slug?}', [HomeController::class,'categoryDetailPage'])->name('category-detail');
+
+
+
 Route::get('contactus', [HomeController::class,'contactusPage']);
 
 Route::post('contactus', [HomeController::class,'contactusPost'])->name('contactus');

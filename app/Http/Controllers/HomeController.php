@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactUs;
 use Illuminate\Http\Request;
+use \App\Models\Category;
+use \App\Models\CatCategory;
 
 class HomeController extends Controller
 {
@@ -16,14 +18,32 @@ class HomeController extends Controller
         return view('about');
     }
 
-    public function categoryPage()
+    public function categoryPage($slug=null)
     {
-        return view('category');
+
+        if($slug!=null){
+            $catCategory = CatCategory::where('slug',$slug)->first();
+            $categoryList = Category::latest()->with('catCategory')->where('category_id',$catCategory->id)->paginate(6);
+           
+        }else{
+            $categoryList = Category::latest()->with('catCategory')->paginate(6); 
+         }
+         $cat = CatCategory::latest()->limit(12)->get();
+        return view('category',compact('categoryList','cat'));
     }
 
-    public function categoryDetailPage()
+
+
+    public function categoryDetailPage($slug=null)
     {
-        return view('category-detail');
+        $catCategory = CatCategory::latest()->limit(6)->get();
+        $categorylist = Category::latest()->limit(6)->get();
+        $categoryData = Category::with('catCategory')->where('slug',$slug)->first();
+    //     $seo_data['seo_title'] =$categoryData->seo_title;
+    //     $seo_data['seo_description'] =$categoryData->seo_description;
+    //    $seo_data['keywords'] =$categoryData->seo_keyword;
+    //    $canocial ='https://codepin.org/service-details/'.$slug;
+        return view('category-detail',compact('categoryData','categorylist','catCategory'));
     }
 
 
