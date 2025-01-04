@@ -39,8 +39,10 @@
     @php
     use \App\Models\CatCategory;
     use \App\Models\Tool;
+    use \App\Models\Service;
     $catcategory = CatCategory::all();
     $toolData = Tool::all();
+    $serviceData = Service::all();
 @endphp
     <header class="nav-container">
         <div class="nav-logo">
@@ -67,8 +69,11 @@
                 <li class="nav-link-item dropdown-menu-branch">
                     <a href="#" data-toggle="dropdown-menu">Services <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-main-menu">
-                        <li class="dropdown-menu-item"><a href="{{url('service')}}">Services Sub Menu 1</a></li>
-                        <li class="dropdown-menu-item"><a href="{{url('service')}}">Services Sub Menu 2</a></li>
+                        @foreach ($serviceData as $serviceDatas)
+                            
+                        <li class="dropdown-menu-item"><a href="{{url('service/'.$serviceDatas->slug)}}">{{$serviceDatas->title}}</a></li>
+                        @endforeach
+                      
                     </ul>
                 </li>
 

@@ -30,7 +30,7 @@ class HomeController extends Controller
         $seo_data['seo_description'] = $homepage->seo_des_about;
         $seo_data['keywords'] = $homepage->seo_key_about;
         $canocial ='https://codepin.org/about';
-        return view('about');
+        return view('about',compact('seo_data','canocial'));
     }
 
     public function categoryPage($slug=null)
@@ -66,21 +66,29 @@ class HomeController extends Controller
         $seo_data['seo_description'] =$categoryData->seo_description;
        $seo_data['keywords'] =$categoryData->seo_keyword;
        $canocial ='https://codepin.org/service-details/'.$slug;
-        return view('category-detail',compact('categoryData','categorylist','catCategory'));
+        return view('category-detail',compact('categoryData','categorylist','catCategory','seo_data','canocial'));
     }
 
 
     public function servicesPage($slug=null)
     {
-        
+        $homepage = Title::select('seo_title_services','seo_des_services','seo_key_services')->first();
         if($slug!=null){
             $serviceCategory = ServiceCategory::where('slug',$slug)->first();
             $serviceList = Service::latest()->with('serviceCategory')->where('category_id',$serviceCategory->id)->paginate(6);
+            $seo_data['seo_title'] =$serviceCategory->seo_title;
+            $seo_data['seo_description'] =$serviceCategory->seo_description;
+           $seo_data['keywords'] =$serviceCategory->seo_keyword;
+           $canocial ='https://codepin.org/services/'.$slug;
            
         }else{
             $serviceList = Service::latest()->with('serviceCategory')->paginate(6); 
+            $seo_data['seo_title'] =$homepage->seo_title_services;
+            $seo_data['seo_description'] =$homepage->seo_des_services;
+            $seo_data['keywords'] =$homepage->seo_key_services;
+            $canocial ='https://codepin.org/services';
          }
-        return view('services',compact('serviceList'));
+        return view('services',compact('serviceList','seo_data','canocial'));
     }
 
 
@@ -89,14 +97,23 @@ class HomeController extends Controller
         $serviceCategory = ServiceCategory::latest()->limit(6)->get();
         $serviceData = Service::with('serviceCategory')->where('slug',$slug)->first();
         $servicecatlist = ServiceCategory::latest()->limit(6)->get();
+        $seo_data['seo_title'] =$serviceData->seo_title;
+        $seo_data['seo_description'] =$serviceData->seo_description;
+       $seo_data['keywords'] =$serviceData->seo_keyword;
+       $canocial ='https://codepin.org/service-details/'.$slug;
     
-        return view('service',compact('serviceData','servicecatlist','serviceCategory'));
+        return view('service',compact('serviceData','servicecatlist','serviceCategory','seo_data','canocial'));
     }
 
 
     public function contactusPage()
     {
-        return view('contactus');
+        $homepage = Title::first();
+        $seo_data['seo_title'] = $homepage->seo_title_contact;
+        $seo_data['seo_description'] = $homepage->seo_des_contact;
+        $seo_data['keywords'] = $homepage->seo_key_contact;
+        $canocial = 'https://codepin.org/contact';
+        return view('contactus',compact('seo_data','canocial'));
     }
 
 
@@ -153,15 +170,23 @@ class HomeController extends Controller
 
     public function digitalPage($slug=null)
     {
-
+        $homepage = Title::select('seo_title_tool','seo_des_tool','seo_key_tool')->first();
         if($slug!=null){
             $toolCategory = ToolCategory::where('slug',$slug)->first();
             $toolList = Tool::latest()->with('toolCategory')->where('tool_id',$toolCategory->id)->paginate(6);
+            $seo_data['seo_title'] =$toolCategory->seo_title;
+            $seo_data['seo_description'] =$toolCategory->seo_description;
+           $seo_data['keywords'] =$toolCategory->seo_keyword;
+           $canocial ='https://codepin.org/blogs/'.$slug;
            
         }else{
             $toolList = Tool::latest()->with('toolCategory')->paginate(6); 
+            $seo_data['seo_title'] =$homepage->seo_title_tool;
+            $seo_data['seo_description'] =$homepage->seo_des_tool;
+            $seo_data['keywords'] =$homepage->seo_key_tool;
+            $canocial ='https://codepin.org/blogs';
          }
-        return view('digital-tools',compact('toolList'));
+        return view('digital-tools',compact('toolList','seo_data','canocial'));
     }
 
 
@@ -171,11 +196,11 @@ class HomeController extends Controller
         $tCategorys = ToolCategory::latest()->limit(6)->get();
         $toolData = Tool::with('toolCategory')->where('slug',$slug)->first();
         $toollist = Tool::latest()->limit(6)->get();
-    //     $seo_data['seo_title'] =$toolCategory->seo_title;
-    //     $seo_data['seo_description'] =$toolCategory->seo_description;
-    //    $seo_data['keywords'] =$toolCategory->seo_keyword;
-    //    $canocial ='https://codepin.org/service-details/'.$slug;
-        return view('digital-tool',compact('toolData','toollist','tCategorys'));
+        $seo_data['seo_title'] =$toolData->seo_title;
+        $seo_data['seo_description'] =$toolData->seo_description;
+       $seo_data['keywords'] =$toolData->seo_keyword;
+       $canocial ='https://codepin.org/service-details/'.$slug;
+        return view('digital-tool',compact('toolData','toollist','tCategorys','seo_data','canocial'));
  
     }
 
@@ -184,6 +209,12 @@ class HomeController extends Controller
 
     public function policyPage()
     {
-        return view('policy');
+        
+        $homepage = Title::first();
+        $seo_data['seo_title'] = $homepage->seo_title_policy;
+        $seo_data['seo_description'] = $homepage->seo_des_policy;
+        $seo_data['keywords'] = $homepage->seo_key_policy;
+        $canocial = 'https://codepin.org/contact';
+        return view('policy',compact('seo_data','canocial'));
     }
 }

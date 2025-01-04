@@ -7,13 +7,20 @@ use App\Models\User;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use App\Models\Title;
 class AuthController extends Controller
 {
     
     public function signupPage()
     {
-        return view('signup');
+       
+        $homepage = Title::first();
+        $seo_data['seo_title'] = $homepage->seo_title_signup;
+        $seo_data['seo_description'] = $homepage->seo_des_signup;
+        $seo_data['keywords'] = $homepage->seo_key_signup;
+        $canocial ='https://codepin.org/about';
+       
+        return view('signup',compact('seo_data','canocial'));
     }
 
     public function registerPost(Request $request)
@@ -50,7 +57,13 @@ class AuthController extends Controller
 
     public function loginPage()
     {
-        return view('login');
+     
+        $homepage = Title::first();
+        $seo_data['seo_title'] = $homepage->seo_title_login;
+        $seo_data['seo_description'] = $homepage->seo_des_login;
+        $seo_data['keywords'] = $homepage->seo_key_login;
+        $canocial ='https://codepin.org/about';
+        return view('login',compact('seo_data','canocial'));
     }
 
 
