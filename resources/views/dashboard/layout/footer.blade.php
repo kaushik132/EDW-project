@@ -88,7 +88,7 @@
             <a href="#">Blog</a> |
             <a href="#">Terms & Conditions</a> |
             <a href="#">Article Galaxy AI FAQ</a> |
-            <a href="#">Privacy Policy</a> |
+            <a href="{{url('policy')}}">Privacy Policy</a> |
             <a href="#">Contact</a>
         </nav>
     </div>

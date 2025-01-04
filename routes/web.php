@@ -17,11 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [HomeController::class,'index'])->name('index');
 Route::get('about', [HomeController::class,'aboutPage']);
+Route::get('policy', [HomeController::class,'policyPage']);
 
 
 Route::get('category/{slug?}', [HomeController::class,'categoryPage']);
 Route::get('category-detail/{slug?}', [HomeController::class,'categoryDetailPage'])->name('category-detail');
 
+Route::get('digital-tool/{slug?}', [HomeController::class,'digitalToolPage']);
+Route::get('digital-tools/{slug?}', [HomeController::class,'digitalPage']);
 
 
 Route::get('contactus', [HomeController::class,'contactusPage']);
@@ -29,9 +32,7 @@ Route::get('contactus', [HomeController::class,'contactusPage']);
 Route::post('contactus', [HomeController::class,'contactusPost'])->name('contactus');
 
 
-Route::get('digital-tool', [HomeController::class,'digitalToolPage']);
 
-Route::get('policy', [HomeController::class,'policyPage']);
 Route::get('service', [HomeController::class,'servicePage']);
 
 // Auth routes

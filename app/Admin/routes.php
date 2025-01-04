@@ -19,5 +19,6 @@ Route::group([
     $router->resource('service-categories', ServiceCategoryController::class);
     $router->resource('tool-categories', ToolCategoryController::class);
     $router->resource('tools', ToolController::class);
+    $router->resource('titles', TitleController::class);
 
 });

@@ -6,6 +6,8 @@ use App\Models\ContactUs;
 use Illuminate\Http\Request;
 use \App\Models\Category;
 use \App\Models\CatCategory;
+use App\Models\Tool;
+use App\Models\ToolCategory;
 
 class HomeController extends Controller
 {
@@ -110,12 +112,34 @@ class HomeController extends Controller
     }
 
 
-
-
-    public function digitalToolPage()
+    public function digitalPage($slug=null)
     {
-        return view('digital-tool');
+
+        if($slug!=null){
+            $toolCategory = ToolCategory::where('slug',$slug)->first();
+            $toolList = Tool::latest()->with('toolCategory')->where('tool_id',$toolCategory->id)->paginate(6);
+           
+        }else{
+            $toolList = Tool::latest()->with('toolCategory')->paginate(6); 
+         }
+        return view('digital-tools',compact('toolList'));
     }
+
+
+    public function digitalToolPage($slug=null)
+    {
+
+        $tCategorys = ToolCategory::latest()->limit(6)->get();
+        $toolData = Tool::with('toolCategory')->where('slug',$slug)->first();
+        $toollist = Tool::latest()->limit(6)->get();
+    //     $seo_data['seo_title'] =$toolCategory->seo_title;
+    //     $seo_data['seo_description'] =$toolCategory->seo_description;
+    //    $seo_data['keywords'] =$toolCategory->seo_keyword;
+    //    $canocial ='https://codepin.org/service-details/'.$slug;
+        return view('digital-tool',compact('toolData','toollist','tCategorys'));
+ 
+    }
+
 
    
 

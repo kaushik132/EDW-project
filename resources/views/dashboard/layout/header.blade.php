@@ -14,6 +14,12 @@
 
 <body>
     <!-- --------------------------Header Start------------------------- -->
+    @php
+    use \App\Models\CatCategory;
+    use \App\Models\Tool;
+    $catcategory = CatCategory::all();
+    $toolData = Tool::all();
+@endphp
     <header class="nav-container">
         <div class="nav-logo">
             <a href="{{url('/')}}"><img src="{{url('assets/images/EDW.png')}}" alt="logo"></a>
@@ -29,9 +35,11 @@
                 <li class="nav-link-item dropdown-menu-branch">
                     <a href="#" data-toggle="dropdown-menu">Digital Tool <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-main-menu">
-                        <li class="dropdown-menu-item"><a href="{{url('digital-tool')}}">Tool Sub Menu 1</a></li>
-                        <li class="dropdown-menu-item"><a href="{{url('digital-tool')}}">Tool Sub Menu 2</a></li>
-                        <li class="dropdown-menu-item"><a href="{{url('digital-tool')}}">Tool Sub Menu 3</a></li>
+                        @foreach ($toolData as $tool)
+                            
+                        <li class="dropdown-menu-item"><a href="{{url('digital-tool/'.$tool->slug)}}">{{$tool->title}}</a></li>
+                        @endforeach
+                        
                     </ul>
                 </li>
                 <li class="nav-link-item dropdown-menu-branch">
@@ -42,10 +50,7 @@
                     </ul>
                 </li>
 
-                @php
-                    use \App\Models\CatCategory;
-                    $catcategory = CatCategory::all();
-                @endphp
+           
                 <li class="nav-link-item dropdown-menu-branch">
                     <a href="{{url('category')}}" data-toggle="dropdown-menu">Category <i
                             class="fa-solid fa-chevron-down"></i></a>
