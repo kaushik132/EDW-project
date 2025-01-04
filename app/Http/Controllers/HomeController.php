@@ -6,6 +6,9 @@ use App\Models\ContactUs;
 use Illuminate\Http\Request;
 use \App\Models\Category;
 use \App\Models\CatCategory;
+use App\Models\Service;
+use App\Models\ServiceCategory;
+use App\Models\Title;
 use App\Models\Tool;
 use App\Models\ToolCategory;
 
@@ -13,25 +16,43 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $homepage = Title::first();
+        $seo_data['seo_title'] = $homepage->seo_title_home;
+        $seo_data['seo_description'] = $homepage->seo_des_home;
+        $seo_data['keywords'] = $homepage->seo_key_home;
+        $canocial ='https://codepin.org';
+        return view('home',compact('homepage','seo_data','canocial'));
     }
     public function aboutPage()
     {
+        $homepage = Title::first();
+        $seo_data['seo_title'] = $homepage->seo_title_about;
+        $seo_data['seo_description'] = $homepage->seo_des_about;
+        $seo_data['keywords'] = $homepage->seo_key_about;
+        $canocial ='https://codepin.org/about';
         return view('about');
     }
 
     public function categoryPage($slug=null)
     {
-
+        $homepage = Title::select('seo_title_category','seo_des_category','seo_key_category')->first();
         if($slug!=null){
             $catCategory = CatCategory::where('slug',$slug)->first();
             $categoryList = Category::latest()->with('catCategory')->where('category_id',$catCategory->id)->paginate(6);
+            $seo_data['seo_title'] =$catCategory->seo_title;
+            $seo_data['seo_description'] =$catCategory->seo_description;
+           $seo_data['keywords'] =$catCategory->seo_keyword;
+           $canocial ='https://codepin.org/services/'.$slug;
            
         }else{
             $categoryList = Category::latest()->with('catCategory')->paginate(6); 
+            $seo_data['seo_title'] =$homepage->seo_title_category;
+            $seo_data['seo_description'] =$homepage->seo_des_category;
+            $seo_data['keywords'] =$homepage->seo_key_category;
+            $canocial ='https://codepin.org/services';
          }
          $cat = CatCategory::latest()->limit(12)->get();
-        return view('category',compact('categoryList','cat'));
+        return view('category',compact('categoryList','cat','seo_data','canocial'));
     }
 
 
@@ -41,17 +62,35 @@ class HomeController extends Controller
         $catCategory = CatCategory::latest()->limit(6)->get();
         $categorylist = Category::latest()->limit(6)->get();
         $categoryData = Category::with('catCategory')->where('slug',$slug)->first();
-    //     $seo_data['seo_title'] =$categoryData->seo_title;
-    //     $seo_data['seo_description'] =$categoryData->seo_description;
-    //    $seo_data['keywords'] =$categoryData->seo_keyword;
-    //    $canocial ='https://codepin.org/service-details/'.$slug;
+        $seo_data['seo_title'] =$categoryData->seo_title;
+        $seo_data['seo_description'] =$categoryData->seo_description;
+       $seo_data['keywords'] =$categoryData->seo_keyword;
+       $canocial ='https://codepin.org/service-details/'.$slug;
         return view('category-detail',compact('categoryData','categorylist','catCategory'));
     }
 
 
-    public function servicePage()
+    public function servicesPage($slug=null)
     {
-        return view('service');
+        
+        if($slug!=null){
+            $serviceCategory = ServiceCategory::where('slug',$slug)->first();
+            $serviceList = Service::latest()->with('serviceCategory')->where('category_id',$serviceCategory->id)->paginate(6);
+           
+        }else{
+            $serviceList = Service::latest()->with('serviceCategory')->paginate(6); 
+         }
+        return view('services',compact('serviceList'));
+    }
+
+
+    public function servicePage($slug=null)
+    {
+        $serviceCategory = ServiceCategory::latest()->limit(6)->get();
+        $serviceData = Service::with('serviceCategory')->where('slug',$slug)->first();
+        $servicecatlist = ServiceCategory::latest()->limit(6)->get();
+    
+        return view('service',compact('serviceData','servicecatlist','serviceCategory'));
     }
 
 

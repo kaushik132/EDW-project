@@ -33,7 +33,7 @@ class ServiceController extends AdminController
         $grid->column('status', __('Status'))->display(function ($status) {
             return $status == 1 ? 'Active' : 'Inactive';
         });
-        $grid->column('short_content', __('Short content'));
+      
         $grid->column('image', __('Image'))->image(url('/uploads/'),100,150);
         $grid->column('home_image', __('Home image'))->image(url('/uploads/'),100,150);
         $grid->column('created_at', __('Created at'))->display(function ($created_at) {
@@ -62,7 +62,7 @@ class ServiceController extends AdminController
        
         $show->field('alt', __('Alt'));
         $show->field('url', __('Url'));
-        $show->field('description', __('Description'));
+        // $show->field('description', __('Description'));
         $show->field('seo_title', __('Seo title'));
         $show->field('seo_description', __('Seo description'));
         $show->field('seo_keyword', __('Seo keyword'));
@@ -93,12 +93,12 @@ class ServiceController extends AdminController
         });
 
 
-        $form->textarea('short_content', __('Short content'));
+        $form->ckeditor('short_content', __('Short content'));
         $form->image('image', __('Image'));
         $form->image('home_image', __('Home image'));
         $form->text('alt', __('Alt'));
         $form->url('url', __('Url'));
-        $form->ckeditor('description', __('Description'));
+        // $form->ckeditor('description', __('Description'));
         $form->textarea('seo_title', __('Seo title'));
         $form->textarea('seo_description', __('Seo description'));
         $form->textarea('seo_keyword', __('Seo keyword'));

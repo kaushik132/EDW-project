@@ -26,6 +26,10 @@ Route::get('category-detail/{slug?}', [HomeController::class,'categoryDetailPage
 Route::get('digital-tool/{slug?}', [HomeController::class,'digitalToolPage']);
 Route::get('digital-tools/{slug?}', [HomeController::class,'digitalPage']);
 
+Route::get('service/{slug?}', [HomeController::class,'servicePage']);
+Route::get('services', [HomeController::class,'servicesPage']);
+
+
 
 Route::get('contactus', [HomeController::class,'contactusPage']);
 
@@ -33,7 +37,6 @@ Route::post('contactus', [HomeController::class,'contactusPost'])->name('contact
 
 
 
-Route::get('service', [HomeController::class,'servicePage']);
 
 // Auth routes
 Route::group(['middleware' => 'guest'], function () {

@@ -26,7 +26,8 @@ class ServiceCategoryController extends AdminController
     {
         $grid = new Grid(new ServiceCategory());
 
-        $grid->column('id', __('Id'));
+        
+        $grid->column('image', __('Image'))->image(url('/uploads/'),100,150);
         $grid->column('name', __('Name'));
         $grid->column('slug', __('Slug'));
         $grid->column('seo_title', __('Seo title'));
@@ -67,7 +68,7 @@ class ServiceCategoryController extends AdminController
     protected function form()
     {  
         $form = new Form(new ServiceCategory());
-
+$form->image('image', __('Image'));
         $form->text('name', __('Name'));
 
         $form->hidden('slug');
@@ -77,6 +78,7 @@ class ServiceCategoryController extends AdminController
            $form->slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-',trim($form->name)));
         });
 
+        $form->textarea('short_des', __('Short Description'));
         $form->textarea('seo_title', __('Seo Title'));
         $form->textarea('seo_des', __('Seo Description'));
         $form->textarea('seo_key', __('Seo Keywords'));

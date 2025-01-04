@@ -8,7 +8,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
 
-    <title>Home Page</title>
+    @if(isset($seo_data['seo_title']))
+    <title>{{ $seo_data['seo_title'] }}</title>
+    @endif
+  
+    @if(isset($seo_data['seo_description']))
+        <meta name="description" content="{{$seo_data['seo_description']}}" />
+        @endif
+  
+        @if(isset($seo_data['keywords']))
+        <meta name="keywords"  content="{{$seo_data['keywords']}}" />
+        @endif  
+        
+        
+        <meta property="og:title" content="{{$seo_data['seo_title']}}">
+  <meta property="og:site_name" content="Codepin">
+
+  @if(isset($canocial))
+  <meta property="og:url" content="{{$canocial}}">
+  @endif
+
+  <meta property="og:description" content="{{$seo_data['seo_description']}}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
     <link rel="icon" type="image/x-icon" href="{{url('assets/images/EDW.png')}}">
 </head>
 
