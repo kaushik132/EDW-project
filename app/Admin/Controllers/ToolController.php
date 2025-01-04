@@ -7,6 +7,7 @@ use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
 use \App\Models\Tool;
+use \App\Models\ToolCategory;
 
 class ToolController extends AdminController
 {
@@ -26,23 +27,21 @@ class ToolController extends AdminController
     {
         $grid = new Grid(new Tool());
 
-        $grid->column('id', __('Id'));
-        $grid->column('tool_id', __('Tool id'));
+    
+        $grid->column('toolCategory.name', __('Tool Category'));
         $grid->column('title', __('Title'));
         $grid->column('slug', __('Slug'));
-        $grid->column('short_content', __('Short content'));
-        $grid->column('description', __('Description'));
-        $grid->column('image', __('Image'));
-        $grid->column('alt', __('Alt'));
-        $grid->column('url', __('Url'));
-        $grid->column('seo_title', __('Seo title'));
-        $grid->column('seo_description', __('Seo description'));
-        $grid->column('seo_keyword', __('Seo keyword'));
-        $grid->column('question', __('Question'));
-        $grid->column('answer', __('Answer'));
-        $grid->column('status', __('Status'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+      
+        $grid->column('image', __('Image'))->image(url('/uploads/'),100,150);
+       
+        $grid->column('status', __('Status'))->display(function ($status) {
+            return $status == 1 ? 'Active' : 'Inactive';
+        });
+        $grid->column('created_at', __('Created at'))->display(function ($created_at) {
+            return \Carbon\Carbon::parse($created_at)->format('d-M-Y');
+        });
+        
+
 
         return $grid;
     }
@@ -58,7 +57,7 @@ class ToolController extends AdminController
         $show = new Show(Tool::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('tool_id', __('Tool id'));
+        $show->select('tool_id', __('Tool id'));
         $show->field('title', __('Title'));
         $show->field('slug', __('Slug'));
         $show->field('short_content', __('Short content'));
@@ -87,19 +86,25 @@ class ToolController extends AdminController
     {
         $form = new Form(new Tool());
 
-        $form->text('tool_id', __('Tool id'));
+        $form->select('tool_id', __('Tool id'))->options(ToolCategory::pluck('name','id'))->default(null)->rules('required');
         $form->text('title', __('Title'));
-        $form->text('slug', __('Slug'));
-        $form->text('short_content', __('Short content'));
-        $form->text('description', __('Description'));
+        $form->hidden('slug', __('Slug'));
+
+        $form->saving(function(Form $form){
+
+            $form->slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-',trim($form->title)));
+        });
+
+        $form->ckeditor('short_content', __('Short content'));
+        $form->ckeditor('description', __('Description'));
         $form->image('image', __('Image'));
         $form->text('alt', __('Alt'));
         $form->url('url', __('Url'));
         $form->text('seo_title', __('Seo title'));
-        $form->text('seo_description', __('Seo description'));
-        $form->text('seo_keyword', __('Seo keyword'));
-        $form->text('question', __('Question'));
-        $form->text('answer', __('Answer'));
+        $form->textarea('seo_description', __('Seo description'));
+        $form->textarea('seo_keyword', __('Seo keyword'));
+        $form->textarea('question', __('Question'));
+        $form->textarea('answer', __('Answer'));
         $form->text('status', __('Status'));
 
         return $form;

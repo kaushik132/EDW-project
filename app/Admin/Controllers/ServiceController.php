@@ -30,10 +30,16 @@ class ServiceController extends AdminController
         $grid->model()->orderBy('id', 'DESC');
         $grid->column('title', __('Title'));
         $grid->column('slug', __('Slug'));
+        $grid->column('status', __('Status'))->display(function ($status) {
+            return $status == 1 ? 'Active' : 'Inactive';
+        });
         $grid->column('short_content', __('Short content'));
         $grid->column('image', __('Image'))->image(url('/uploads/'),100,150);
         $grid->column('home_image', __('Home image'))->image(url('/uploads/'),100,150);
-       
+        $grid->column('created_at', __('Created at'))->display(function ($created_at) {
+            return \Carbon\Carbon::parse($created_at)->format('d-M-Y');
+        });
+        
 
         return $grid;
     }
@@ -98,6 +104,8 @@ class ServiceController extends AdminController
         $form->textarea('seo_keyword', __('Seo keyword'));
         $form->text('question', __('Question'));
         $form->text('answer', __('Answer'));
+        
+        $form->switch('status', __('Status'))->default(1);
        
 
         return $form;

@@ -33,9 +33,9 @@ class CategoryController extends AdminController
       
         $grid->column('image', __('Image'))->image(url('/uploads/'), 100, 150)->sortable();
       
-       
-    
-        $grid->column('status', __('Status'))->sortable();
+        $grid->column('status', __('Status'))->display(function ($status) {
+            return $status == 1 ? 'Active' : 'Inactive';
+        });
        
         $grid->column('created_at', __('Created at'))->display(function ($created_at) {
             return \Carbon\Carbon::parse($created_at)->format('d M Y');
@@ -112,7 +112,7 @@ class CategoryController extends AdminController
         $form->textarea('seo_keyword', __('Seo keyword'));
         $form->textarea('question', __('Question'));
         $form->textarea('answer', __('Answer'));
-        $form->text('status', __('Status'));
+        $form->switch('status', __('Status'))->default(1);
         $form->url('whatapp', __('Whatapp'));
         $form->url('facebook', __('Facebook'));
         $form->url('linkedin', __('Linkedin'));
