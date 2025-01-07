@@ -6,6 +6,7 @@ use App\Models\ContactUs;
 use Illuminate\Http\Request;
 use \App\Models\Category;
 use \App\Models\CatCategory;
+use App\Models\Faq;
 use App\Models\Service;
 use App\Models\ServiceCategory;
 use App\Models\Title;
@@ -21,7 +22,10 @@ class HomeController extends Controller
         $seo_data['seo_description'] = $homepage->seo_des_home;
         $seo_data['keywords'] = $homepage->seo_key_home;
         $canocial ='https://codepin.org';
-        return view('home',compact('homepage','seo_data','canocial'));
+
+        $catCategory = Category::latest()->limit(6)->get();
+        $faq = Faq::all();
+        return view('home',compact('homepage','seo_data','canocial','catCategory','faq'));
     }
     public function aboutPage()
     {

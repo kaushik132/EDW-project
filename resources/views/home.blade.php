@@ -367,55 +367,29 @@
         <h2 class="about-title-heading" style="color:#fa0009">Popular Categories</h2>
         <p class="text-center">Lorem ipsum, dolor sit amet!</p>
         <div class="row">
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                    <div class="category-content">
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque
-                            illum porro hic.</p>
-                        <a href="category-detail.html">
-                            <div class="text-center"><button class="form-submit-btn">Learn-more</button></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+           
 
+            @foreach ($catCategory as $catCategorys)
+                
             <div class="col-md-4 mt-3">
                 <div class="catergory-box">
                     <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
+                            src="{{url('uploads/'.$catCategorys->image)}}"
                             alt="category-image" class="img-fluid"></div>
                     <div class="category-content">
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque
-                            illum porro hic.</p>
-                        <a href="category-detail.html">
+                        <h5>{{$catCategorys->title}}</h5>
+                        <p>{{ Str::limit($catCategorys->short_content, 30) }}</p>
+                        <a href="{{route('category-detail',$catCategorys->slug)}}">
                             <div class="text-center"><button class="form-submit-btn">Learn-more</button></div>
                         </a>
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <div class="col-md-4 mt-3">
-                <div class="catergory-box">
-                    <div><img
-                            src="https://upload.tanca.io/api/upload/news/63254db1ffc72ce6a1043222?name=63254db1ae7a4jCac3690937-hrm-software-1.png"
-                            alt="category-image" class="img-fluid"></div>
-                    <div class="category-content">
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit illo. Atque
-                            illum porro hic.</p>
-                        <a href="category-detail.html">
-                            <div class="text-center"><button class="form-submit-btn">Learn-more</button></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      
         </div>
-        <a href="category.html">
+        <a href="{{url('category')}}">
             <div class="text-center mt-4"><button class="form-submit-btn">View More</button></div>
         </a>
     </div>
@@ -432,81 +406,33 @@
 
             <div class="col-md-6 mt-3">
                 <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Question 1
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam
-                                    fugiat assumenda quas vitae impedit adipisci minus omnis iure?</p>
-                            </div>
-                        </div>
-                    </div>
+
+
+                    @foreach ($faq as $faqs)
+                        
+                   
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Question 2
+                                data-bs-target="#collapse{{$faqs->id}}" aria-expanded="false" aria-controls="collapse{{$faqs->id}}">
+                              {{$faqs->question}}
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse"
+                        <div id="collapse{{$faqs->id}}" class="accordion-collapse collapse"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam
-                                    fugiat assumenda quas vitae impedit adipisci minus omnis iure?</p>
+                                <p>{{$faqs->answer}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Question 3
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam
-                                    fugiat assumenda quas vitae impedit adipisci minus omnis iure?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Question 4
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam
-                                    fugiat assumenda quas vitae impedit adipisci minus omnis iure?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Question 5
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam
-                                    fugiat assumenda quas vitae impedit adipisci minus omnis iure?</p>
-                            </div>
-                        </div>
-                    </div>
+                    
+
+                    @endforeach
+
+                 
+                  
+               
+
                 </div>
             </div>
         </div>

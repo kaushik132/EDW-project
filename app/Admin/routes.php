@@ -20,5 +20,6 @@ Route::group([
     $router->resource('tool-categories', ToolCategoryController::class);
     $router->resource('tools', ToolController::class);
     $router->resource('titles', TitleController::class);
+    $router->resource('faqs', FaqController::class);
 
 });
