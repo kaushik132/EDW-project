@@ -54,6 +54,10 @@ class TitleController extends AdminController
         $grid->column('seo_title_policy', __('Seo title policy'));
         $grid->column('seo_des_policy', __('Seo des policy'));
         $grid->column('seo_key_policy', __('Seo key policy'));
+        $grid->column('seo_title_blog', __('Seo title blog'));
+        $grid->column('seo_des_blog', __('Seo des blog'));
+        $grid->column('seo_key_blog', __('Seo key blog'));
+
         $grid->column('created_at', __('Created at'))->display(function ($created_at) {
             return \Carbon\Carbon::parse($created_at)->format('d-M-Y');
         });
@@ -102,6 +106,9 @@ class TitleController extends AdminController
         $show->field('seo_title_policy', __('Seo title policy'));
         $show->field('seo_des_policy', __('Seo des policy'));
         $show->field('seo_key_policy', __('Seo key policy'));
+        $show->field('seo_title_blog', __('Seo title blog'));
+        $show->field('seo_des_blog', __('Seo des blog'));
+        $show->field('seo_key_blog', __('Seo key blog'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -144,6 +151,9 @@ class TitleController extends AdminController
         $form->text('seo_title_policy', __('Seo title policy'));
         $form->textarea('seo_des_policy', __('Seo des policy'));
         $form->textarea('seo_key_policy', __('Seo key policy'));
+        $form->text('seo_title_blog', __('Seo title blog'));
+        $form->textarea('seo_des_blog', __('Seo des blog'));
+        $form->textarea('seo_key_blog', __('Seo key blog'));
 
         return $form;
     }

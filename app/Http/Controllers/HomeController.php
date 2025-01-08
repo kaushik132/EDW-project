@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BlogCategory;
+use App\Models\Blog;
 use App\Models\ContactUs;
 use Illuminate\Http\Request;
 use \App\Models\Category;
@@ -108,6 +110,32 @@ class HomeController extends Controller
     
         return view('service',compact('serviceData','servicecatlist','serviceCategory','seo_data','canocial'));
     }
+
+
+    public function blogPage($slug=null)
+    {
+        $homepage = Title::first();
+        if($slug!=null){
+            $blogCategory = BlogCategory::where('slug',$slug)->first();
+            $blogList = Blog::latest()->with('blogCategory')->where('category_id',$blogCategory->id)->paginate(6);
+            $seo_data['seo_title'] =$blogCategory->seo_title;
+            $seo_data['seo_description'] =$blogCategory->seo_description;
+           $seo_data['keywords'] =$blogCategory->seo_keyword;
+           $canocial ='https://codepin.org/blog/'.$slug;
+           
+        }else{
+            $blogList = Blog::latest()->with('blogCategory')->paginate(6); 
+            $seo_data['seo_title'] =$homepage->seo_title_services;
+            $seo_data['seo_description'] =$homepage->seo_des_services;
+            $seo_data['keywords'] =$homepage->seo_key_services;
+            $canocial ='https://codepin.org/blog';
+         }
+
+         $blogfillter = BlogCategory::latest()->limit(12)->get();
+        return view('blog',compact('seo_data','canocial','blogList','blogfillter'));
+    }
+
+   
 
 
     public function contactusPage()

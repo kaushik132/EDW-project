@@ -30,6 +30,10 @@ Route::get('services/{slug?}', [HomeController::class,'servicesPage']);
 Route::get('service/{slug?}', [HomeController::class,'servicePage']);
 
 
+Route::get('blog/{slug?}', [HomeController::class,'blogPage']);
+
+
+
 
 Route::get('contactus', [HomeController::class,'contactusPage']);
 

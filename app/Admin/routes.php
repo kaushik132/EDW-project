@@ -22,5 +22,7 @@ Route::group([
     $router->resource('titles', TitleController::class);
     $router->resource('faqs', FaqController::class);
     $router->resource('users', UserController::class);
+    $router->resource('blog-categories', BlogCategoryController::class);
+    $router->resource('blogs', BlogController::class);
 
 });
