@@ -23,11 +23,11 @@ Route::get('policy', [HomeController::class,'policyPage']);
 Route::get('category/{slug?}', [HomeController::class,'categoryPage']);
 Route::get('category-detail/{slug?}', [HomeController::class,'categoryDetailPage'])->name('category-detail');
 
-Route::get('digital-tool/{slug?}', [HomeController::class,'digitalToolPage']);
 Route::get('digital-tools/{slug?}', [HomeController::class,'digitalPage']);
+Route::get('digital-tool/{slug?}', [HomeController::class,'digitalToolPage']);
 
+Route::get('services/{slug?}', [HomeController::class,'servicesPage']);
 Route::get('service/{slug?}', [HomeController::class,'servicePage']);
-Route::get('services', [HomeController::class,'servicesPage']);
 
 
 
