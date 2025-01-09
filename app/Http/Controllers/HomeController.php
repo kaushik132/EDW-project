@@ -114,7 +114,7 @@ class HomeController extends Controller
 
     public function blogPage($slug=null)
     {
-        $homepage = Title::first();
+        $homepage = Title::select('seo_title_blog','seo_des_blog','seo_key_blog')->first();
         if($slug!=null){
             $blogCategory = BlogCategory::where('slug',$slug)->first();
             $blogList = Blog::latest()->with('blogCategory')->where('category_id',$blogCategory->id)->paginate(6);
@@ -125,9 +125,9 @@ class HomeController extends Controller
            
         }else{
             $blogList = Blog::latest()->with('blogCategory')->paginate(6); 
-            $seo_data['seo_title'] =$homepage->seo_title_services;
-            $seo_data['seo_description'] =$homepage->seo_des_services;
-            $seo_data['keywords'] =$homepage->seo_key_services;
+            $seo_data['seo_title'] =$homepage->seo_title_blog;
+            $seo_data['seo_description'] =$homepage->seo_des_blog;
+            $seo_data['keywords'] =$homepage->seo_key_blog;
             $canocial ='https://codepin.org/blog';
          }
 

@@ -8,10 +8,10 @@
     </a>
 <ul class="dropdown-menu">
     @foreach ($blogfillter as $blogfillters)
-    <li><a class="dropdown-item" href="#">{{$blogfillters->name}}</a></li>
+    <li><a class="dropdown-item" href="{{url('blog/'.$blogfillters->slug)}}">{{$blogfillters->name}}</a></li>
     
     @endforeach
-    <li><a class="dropdown-item" href="{{url('category')}}">All</a></li>
+    <li><a class="dropdown-item" href="{{url('blog')}}">All</a></li>
   
 </ul>
 </div>
