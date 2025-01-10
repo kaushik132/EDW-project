@@ -32,6 +32,8 @@ Route::get('service/{slug?}', [HomeController::class,'servicePage']);
 
 Route::get('blog/{slug?}', [HomeController::class,'blogPage']);
 
+Route::get('blog-detail/{slug?}', [HomeController::class,'blogDetailPage'])->name('blog-detail');
+
 
 
 

@@ -144,26 +144,42 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 mt-3">
-                {{-- <div class="accordion" id="accordionExample">
+                <?php   if($toolData->question!=null){   ?>
+                <div class="accordion" id="accordionExample">
 
 
+                        <?php 
+
+                        $questions = explode("__",$toolData->question);
+                        $answers = explode("__",$toolData->answer);
+     
+                          foreach ($questions as $key => $value) { 
+     
+                             $mainEntity[$key]['@type'] ='Question';
+                             $mainEntity[$key]['name'] =$value.'?';
+                             $mainEntity[$key]['acceptedAnswer']['@type'] ='Answer';
+                             $mainEntity[$key]['acceptedAnswer']['text'] =$answers[$key].'.'; 
+     
+                         ?> 
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                         Question 1
+                            {!! $value !!}?
                         </button>
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam fugiat assumenda quas vitae impedit adipisci minus omnis iure?</p>
+                        <p>{!! $answers[$key] !!}</p>
                         </div>
                       </div>
                     </div>
+                    <?php } ?>
                   
                     
                   
                   
-                  </div> --}}
+                  </div>
+                  <?php } ?>
             </div>
             <div class="col-md-1"></div>
         </div>

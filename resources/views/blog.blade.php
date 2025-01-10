@@ -21,7 +21,7 @@
   @foreach ($blogList as $blog)
       
  
-<div class="blog-post">
+<a href="{{url('blog-detail/'.$blog->slug)}}"><div class="blog-post">
     <h1 class="blog-title">{{$blog->title}}</h1>
     <img
         class="blog-image"
@@ -31,7 +31,7 @@
     />
     <h3 class="blog-description">{!!$blog->description!!}</h3>
 </div>
-
+</a>
 @endforeach
 
 

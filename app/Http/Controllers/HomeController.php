@@ -106,9 +106,22 @@ class HomeController extends Controller
         $seo_data['seo_title'] =$serviceData->seo_title;
         $seo_data['seo_description'] =$serviceData->seo_description;
        $seo_data['keywords'] =$serviceData->seo_keyword;
-       $canocial ='https://codepin.org/service-details/'.$slug;
+       $canocial ='https://codepin.org/service/'.$slug;
     
         return view('service',compact('serviceData','servicecatlist','serviceCategory','seo_data','canocial'));
+    }
+
+    public function blogDetailPage($slug=null){
+        $blogCategory = BlogCategory::latest()->limit(6)->get();
+        $blogData = Blog::with('blogCategory')->where('slug',$slug)->first();
+        $bloglist = BlogCategory::latest()->limit(6)->get();
+        $seo_data['seo_title'] =$blogData->seo_title;
+        $seo_data['seo_description'] =$blogData->seo_description;
+       $seo_data['keywords'] =$blogData->seo_keyword;
+       $canocial ='https://codepin.org/blog-detail/'.$slug;
+    
+        return view('blogDetails',compact('blogData','bloglist','blogCategory','seo_data','canocial'));
+
     }
 
 

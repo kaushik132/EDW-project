@@ -3,14 +3,14 @@
 
 
 <center><h1>Blogs Details </h1></center>
-<p>Category Name</p>
+<p>{{$blogData->blogCategory->name}}</p>
 
-<h1>Title name </h1>
-
-
-<p>Description Name </p>
+<h1>{{$blogData->title}}</h1>
 
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNgrry4NBu5xyutJ8cdcYkTQh37YNXa5dqw&s" alt="Blogs Details Image">
+<p>{!!$blogData->description!!} </p>
+
+
+<img src="{{url('uploads/',$blogData->image)}}" alt="Blogs Details Image" width="20%">
 
 @endsection
