@@ -43,47 +43,35 @@
             </div>
             <div class="col-md-4 mt-3">
                 <div class="login-container">
-                    <h5 class="text-center mb-4" style="color:#fa0009"><b>Popular Tools</b></h5>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Plagrism Checker</p>
+                    <h5 class="text-center mb-4" style="color:#fa0009"><b>Popular Blog Details</b></h5>
+
+
+                    @foreach ($blog as $blogs)
+                        
+                    <a href="{{url('blog/'.$blogs->slug)}}" class="text-decoration-none">
+                        <p class="our-categroy-link">&#8594; {{$blogs->name}}</p>
                     </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Plagrism Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Plagrism Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Plagrism Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Plagrism Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Plagrism Checker</p>
-                    </a>
+                    @endforeach
+                    
+                   
+                 
+                    
+                   
                 </div>
 
                 <div class="login-container mt-4">
                     <h5 class="text-center mb-4" style="color:#fa0009"><b>Related Tools</b></h5>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Backlink Checker</p>
+                    @foreach ($related_tool as $related_tools)
+                        
+                    <a href="{{url('digital-tool/'.$related_tools->slug)}}" class="text-decoration-none">
+                        <p class="our-categroy-link">&#8594; {{$related_tools->title}}</p>
                     </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Backlink Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Backlink Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Backlink Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Backlink Checker</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Backlink Checker</p>
-                    </a>
+                    @endforeach
+                
+             
+                  
+                   
+                  
                 </div>
             </div>
         </div>

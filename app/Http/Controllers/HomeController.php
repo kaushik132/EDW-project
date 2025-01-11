@@ -249,8 +249,11 @@ class HomeController extends Controller
         $seo_data['seo_title'] =$toolData->seo_title;
         $seo_data['seo_description'] =$toolData->seo_description;
        $seo_data['keywords'] =$toolData->seo_keyword;
-       $canocial ='https://codepin.org/service-details/'.$slug;
-        return view('digital-tool',compact('toolData','toollist','tCategorys','seo_data','canocial'));
+       $canocial ='https://codepin.org/digital-tool/'.$slug;
+
+       $blog =  BlogCategory::latest()->limit(6)->get();
+       $related_tool = Tool::latest()->limit(6)->get();
+        return view('digital-tool',compact('toolData','toollist','tCategorys','seo_data','canocial','blog','related_tool'));
  
     }
 
