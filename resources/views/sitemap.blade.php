@@ -69,6 +69,32 @@
 </url>
 @endforeach
 
+{{-- Blog  --}}
+<url>
+  <loc>{{url("blog")}}</loc>
+  <lastmod>2024-12-31T10:10:47+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+@foreach ($blogCategory as $blogCategorys)
+    
+<url>
+  <loc>{{url('blog/'.$blogCategorys->slug)}}</loc>
+  <lastmod>{{ $blogCategorys->created_at->tz('UTC')->toAtomString() }}</lastmod>
+  <priority>0.8</priority>
+</url>
+@endforeach
+
+{{-- Blog Details  --}}
+@foreach ($blog as $blogs)
+    
+<url>
+  <loc>{{url('blog-detail/'.$blogs->slug)}}</loc>
+  <lastmod>{{ $blogs->created_at->tz('UTC')->toAtomString() }}</lastmod>
+  <priority>0.8</priority>
+</url>
+@endforeach
+
 
 {{-- Contact Us  --}}
 <url>

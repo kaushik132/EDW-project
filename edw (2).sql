@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2025 at 01:05 PM
+-- Generation Time: Jan 11, 2025 at 11:25 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -57,16 +57,21 @@ INSERT INTO `admin_menu` (`id`, `parent_id`, `order`, `title`, `icon`, `uri`, `p
 (11, 8, 11, 'Laravel artisan', 'icon-terminal', 'helpers/terminal/artisan', NULL, '2024-12-25 23:21:18', '2025-01-03 01:16:45'),
 (12, 8, 12, 'Routes', 'icon-list-alt', 'helpers/routes', NULL, '2024-12-25 23:21:18', '2025-01-03 01:16:45'),
 (13, 0, 13, 'Contact-uses', 'icon-file', 'contact-uses', NULL, '2024-12-26 06:08:17', '2025-01-03 01:16:45'),
-(14, 16, 21, 'Categories', 'icon-file', 'categories', NULL, '2024-12-30 04:08:25', '2025-01-04 00:17:03'),
-(15, 16, 22, 'Cat-categories', 'icon-file', 'cat-categories', NULL, '2024-12-30 05:55:03', '2025-01-04 00:17:03'),
-(16, 0, 20, 'Category Section', 'icon-angle-right', NULL, 'ext.helpers', '2025-01-03 01:15:52', '2025-01-04 00:17:03'),
-(17, 0, 17, 'Services Section', 'icon-angle-right', NULL, '*', '2025-01-03 01:20:32', '2025-01-04 00:17:03'),
-(18, 17, 19, 'Services', 'icon-file', 'services', NULL, '2025-01-03 03:21:37', '2025-01-04 00:17:03'),
-(19, 17, 18, 'Service-categories', 'icon-file', 'service-categories', NULL, '2025-01-03 04:10:57', '2025-01-04 00:17:03'),
-(20, 22, 16, 'Tool-categories', 'icon-file', 'tool-categories', NULL, '2025-01-03 05:49:49', '2025-01-04 00:17:03'),
-(21, 22, 15, 'Tools', 'icon-file', 'tools', NULL, '2025-01-03 06:27:14', '2025-01-04 00:17:03'),
-(22, 0, 14, 'Tools Section', 'icon-angle-right', NULL, NULL, '2025-01-04 00:15:28', '2025-01-04 00:17:03'),
-(23, 0, 22, 'Titles', 'icon-file', 'titles', NULL, '2025-01-04 01:03:42', '2025-01-04 01:03:42');
+(14, 16, 24, 'Categories', 'icon-file', 'categories', NULL, '2024-12-30 04:08:25', '2025-01-08 08:34:16'),
+(15, 16, 25, 'Cat-categories', 'icon-file', 'cat-categories', NULL, '2024-12-30 05:55:03', '2025-01-08 08:34:16'),
+(16, 0, 23, 'Category Section', 'icon-angle-right', NULL, 'ext.helpers', '2025-01-03 01:15:52', '2025-01-08 08:34:16'),
+(17, 0, 20, 'Services Section', 'icon-angle-right', NULL, '*', '2025-01-03 01:20:32', '2025-01-08 08:34:16'),
+(18, 17, 22, 'Services', 'icon-file', 'services', NULL, '2025-01-03 03:21:37', '2025-01-08 08:34:16'),
+(19, 17, 21, 'Service-categories', 'icon-file', 'service-categories', NULL, '2025-01-03 04:10:57', '2025-01-08 08:34:16'),
+(20, 22, 19, 'Tool-categories', 'icon-file', 'tool-categories', NULL, '2025-01-03 05:49:49', '2025-01-08 08:34:16'),
+(21, 22, 18, 'Tools', 'icon-file', 'tools', NULL, '2025-01-03 06:27:14', '2025-01-08 08:34:16'),
+(22, 0, 17, 'Tools Section', 'icon-angle-right', NULL, NULL, '2025-01-04 00:15:28', '2025-01-08 08:34:16'),
+(23, 0, 26, 'Titles', 'icon-file', 'titles', NULL, '2025-01-04 01:03:42', '2025-01-08 08:34:16'),
+(24, 0, 27, 'Faqs', 'icon-file', 'faqs', NULL, '2025-01-06 01:19:08', '2025-01-08 08:34:16'),
+(25, 0, 28, 'Users', 'icon-file', 'users', NULL, '2025-01-08 04:30:16', '2025-01-08 08:34:16'),
+(26, 28, 15, 'Blog-categories', 'icon-file', 'blog-categories', NULL, '2025-01-08 08:22:57', '2025-01-08 08:34:16'),
+(27, 28, 16, 'Blogs', 'icon-file', 'blogs', NULL, '2025-01-08 08:32:58', '2025-01-08 08:34:16'),
+(28, 0, 14, 'Blog Section', 'icon-angle-right', NULL, '*', '2025-01-08 08:33:43', '2025-01-08 08:34:16');
 
 -- --------------------------------------------------------
 
@@ -436,7 +441,136 @@ INSERT INTO `admin_operation_log` (`id`, `user_id`, `path`, `method`, `ip`, `inp
 (342, 1, 'admin/services', 'GET', '127.0.0.1', '[]', '2025-01-04 06:03:43', '2025-01-04 06:03:43'),
 (343, 1, 'admin/services/2/edit', 'GET', '127.0.0.1', '[]', '2025-01-04 06:03:45', '2025-01-04 06:03:45'),
 (344, 1, 'admin/services/2/edit', 'GET', '127.0.0.1', '[]', '2025-01-04 06:04:06', '2025-01-04 06:04:06'),
-(345, 1, 'admin/services/2/edit', 'GET', '127.0.0.1', '[]', '2025-01-04 06:04:19', '2025-01-04 06:04:19');
+(345, 1, 'admin/services/2/edit', 'GET', '127.0.0.1', '[]', '2025-01-04 06:04:19', '2025-01-04 06:04:19'),
+(346, 1, 'admin/services/2/edit', 'GET', '127.0.0.1', '[]', '2025-01-05 23:20:41', '2025-01-05 23:20:41'),
+(347, 1, 'admin/service-categories', 'GET', '127.0.0.1', '[]', '2025-01-05 23:26:21', '2025-01-05 23:26:21'),
+(348, 1, 'admin/service-categories', 'GET', '127.0.0.1', '[]', '2025-01-05 23:26:28', '2025-01-05 23:26:28'),
+(349, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-06 01:04:28', '2025-01-06 01:04:28'),
+(350, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-06 01:18:23', '2025-01-06 01:18:23'),
+(351, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"faq\",\"model_name\":\"App\\\\Models\\\\Faq\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\FaqController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"question\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"answer\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"UmaY3TK5AqfHOfYA7FT1rUxoWOd9TpJpZjCQzgO0\"}', '2025-01-06 01:19:05', '2025-01-06 01:19:05'),
+(352, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-06 01:19:10', '2025-01-06 01:19:10'),
+(353, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-06 01:19:27', '2025-01-06 01:19:27'),
+(354, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-06 01:19:29', '2025-01-06 01:19:29'),
+(355, 1, 'admin/faqs/create', 'GET', '127.0.0.1', '[]', '2025-01-06 01:19:32', '2025-01-06 01:19:32'),
+(356, 1, 'admin/faqs', 'POST', '127.0.0.1', '{\"question\":\"Question1\",\"answer\":\"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam fugiat assumenda quas vitae impedit adipisci minus omnis iure?\",\"_token\":\"UmaY3TK5AqfHOfYA7FT1rUxoWOd9TpJpZjCQzgO0\"}', '2025-01-06 01:20:02', '2025-01-06 01:20:02'),
+(357, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-06 01:20:02', '2025-01-06 01:20:02'),
+(358, 1, 'admin/faqs/create', 'GET', '127.0.0.1', '[]', '2025-01-06 01:20:05', '2025-01-06 01:20:05'),
+(359, 1, 'admin/faqs', 'POST', '127.0.0.1', '{\"question\":\"question 2\",\"answer\":\"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam fugiat assumenda quas vitae impedit adipisci minus omnis iure?\",\"_token\":\"UmaY3TK5AqfHOfYA7FT1rUxoWOd9TpJpZjCQzgO0\"}', '2025-01-06 01:20:13', '2025-01-06 01:20:13'),
+(360, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-06 01:20:14', '2025-01-06 01:20:14'),
+(361, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-06 23:25:13', '2025-01-06 23:25:13'),
+(362, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-06 23:25:19', '2025-01-06 23:25:19'),
+(363, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-07 01:03:11', '2025-01-07 01:03:11'),
+(364, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-07 01:48:05', '2025-01-07 01:48:05'),
+(365, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-07 23:12:52', '2025-01-07 23:12:52'),
+(366, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-07 23:12:57', '2025-01-07 23:12:57'),
+(367, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-08 04:28:59', '2025-01-08 04:28:59'),
+(368, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-08 04:29:09', '2025-01-08 04:29:09'),
+(369, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-01-08 04:29:10', '2025-01-08 04:29:10'),
+(370, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 04:29:17', '2025-01-08 04:29:17'),
+(371, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"users\",\"model_name\":\"App\\\\Models\\\\User\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\UserController\",\"create\":[\"controller\",\"menu_item\"],\"fields\":[{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"EOzpXc8IUJfbOKsz5W3V5Bl2YMSczht592kGpZrw\"}', '2025-01-08 04:30:16', '2025-01-08 04:30:16'),
+(372, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 04:30:20', '2025-01-08 04:30:20'),
+(373, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 04:30:33', '2025-01-08 04:30:33'),
+(374, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:30:35', '2025-01-08 04:30:35'),
+(375, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:31:33', '2025-01-08 04:31:33'),
+(376, 1, 'admin/users/1/edit', 'GET', '127.0.0.1', '[]', '2025-01-08 04:31:40', '2025-01-08 04:31:40'),
+(377, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:31:44', '2025-01-08 04:31:44'),
+(378, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:33:48', '2025-01-08 04:33:48'),
+(379, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:34:16', '2025-01-08 04:34:16'),
+(380, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:34:37', '2025-01-08 04:34:37'),
+(381, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:34:51', '2025-01-08 04:34:51'),
+(382, 1, 'admin/users', 'GET', '127.0.0.1', '[]', '2025-01-08 04:35:06', '2025-01-08 04:35:06'),
+(383, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-01-08 07:30:03', '2025-01-08 07:30:03'),
+(384, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-01-08 07:30:05', '2025-01-08 07:30:05'),
+(385, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-01-08 07:35:04', '2025-01-08 07:35:04'),
+(386, 1, 'admin/contact-uses', 'GET', '127.0.0.1', '[]', '2025-01-08 07:35:13', '2025-01-08 07:35:13'),
+(387, 1, 'admin/tool-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 07:35:29', '2025-01-08 07:35:29'),
+(388, 1, 'admin/tool-categories/create', 'GET', '127.0.0.1', '[]', '2025-01-08 07:35:33', '2025-01-08 07:35:33'),
+(389, 1, 'admin/tool-categories', 'POST', '127.0.0.1', '{\"name\":\"Tool 3\",\"slug\":null,\"seo_title\":\"title\",\"seo_des\":\"des\",\"seo_key\":\"key\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 07:35:50', '2025-01-08 07:35:50'),
+(390, 1, 'admin/tool-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 07:35:51', '2025-01-08 07:35:51'),
+(391, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-08 07:35:55', '2025-01-08 07:35:55'),
+(392, 1, 'admin/tool-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 07:35:58', '2025-01-08 07:35:58'),
+(393, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-08 07:36:02', '2025-01-08 07:36:02'),
+(394, 1, 'admin/tools/create', 'GET', '127.0.0.1', '[]', '2025-01-08 07:36:04', '2025-01-08 07:36:04'),
+(395, 1, 'admin/contact-uses', 'GET', '127.0.0.1', '[]', '2025-01-08 07:38:35', '2025-01-08 07:38:35'),
+(396, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-08 07:40:19', '2025-01-08 07:40:19'),
+(397, 1, 'admin/faqs/2', 'DELETE', '127.0.0.1', '{\"_method\":\"delete\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 07:40:26', '2025-01-08 07:40:26'),
+(398, 1, 'admin/faqs', 'GET', '127.0.0.1', '[]', '2025-01-08 07:40:27', '2025-01-08 07:40:27'),
+(399, 1, 'admin/faqs/create', 'GET', '127.0.0.1', '[]', '2025-01-08 07:57:27', '2025-01-08 07:57:27'),
+(400, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-08 07:57:36', '2025-01-08 07:57:36'),
+(401, 1, 'admin/tools/1/edit', 'GET', '127.0.0.1', '[]', '2025-01-08 07:57:39', '2025-01-08 07:57:39'),
+(402, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-08 07:57:51', '2025-01-08 07:57:51'),
+(403, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-08 08:07:07', '2025-01-08 08:07:07'),
+(404, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-01-08 08:07:09', '2025-01-08 08:07:09'),
+(405, 1, 'admin/titles/create', 'GET', '127.0.0.1', '[]', '2025-01-08 08:07:13', '2025-01-08 08:07:13'),
+(406, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-01-08 08:07:14', '2025-01-08 08:07:14'),
+(407, 1, 'admin/titles/1/edit', 'GET', '127.0.0.1', '[]', '2025-01-08 08:07:16', '2025-01-08 08:07:16'),
+(408, 1, 'admin/titles/1', 'PUT', '127.0.0.1', '{\"seo_title_home\":\"home title\",\"seo_des_home\":\"home description\",\"seo_key_home\":\"home keyword\",\"seo_title_about\":\"about title\",\"seo_des_about\":\"about description\",\"seo_key_about\":\"about keyword\",\"seo_title_tool\":\"tool title\",\"seo_des_tool\":\"tool description\",\"seo_key_tool\":\"tool keyword\",\"seo_title_services\":\"service title\",\"seo_des_services\":\"service description\",\"seo_key_services\":\"service keyword\",\"seo_title_category\":\"category title\",\"seo_des_category\":\"category description\",\"seo_key_category\":\"category keyword\",\"seo_title_contact\":\"contact title\",\"seo_des_contact\":\"contact description\",\"seo_key_contact\":\"contact keyword\",\"seo_title_login\":\"login title\",\"seo_des_login\":\"login description\",\"seo_key_login\":\"login keyword\",\"seo_title_signup\":\"sign up title\",\"seo_des_signup\":\"sign up description\",\"seo_key_signup\":\"sign up keyword\",\"seo_title_policy\":\"policy title\",\"seo_des_policy\":\"policy description\",\"seo_key_policy\":\"policy keyword\",\"seo_title_blog\":\"blog Title\",\"seo_des_blog\":\"Blog Description\",\"seo_key_blog\":\"Blog Keywords\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\",\"_method\":\"PUT\"}', '2025-01-08 08:07:40', '2025-01-08 08:07:40'),
+(409, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-01-08 08:07:40', '2025-01-08 08:07:40'),
+(410, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-01-08 08:08:12', '2025-01-08 08:08:12'),
+(411, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 08:20:45', '2025-01-08 08:20:45'),
+(412, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"blog_category\",\"model_name\":\"App\\\\Models\\\\BlogCategory\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\BlogCategoryController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"name\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"slug\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"description\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:22:56', '2025-01-08 08:22:56'),
+(413, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 08:22:58', '2025-01-08 08:22:58'),
+(414, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 08:23:41', '2025-01-08 08:23:41'),
+(415, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:23:46', '2025-01-08 08:23:46'),
+(416, 1, 'admin/blog-categories/create', 'GET', '127.0.0.1', '[]', '2025-01-08 08:23:47', '2025-01-08 08:23:47'),
+(417, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:23:52', '2025-01-08 08:23:52'),
+(418, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:25:01', '2025-01-08 08:25:01'),
+(419, 1, 'admin/blog-categories/create', 'GET', '127.0.0.1', '[]', '2025-01-08 08:25:03', '2025-01-08 08:25:03'),
+(420, 1, 'admin/blog-categories', 'POST', '127.0.0.1', '{\"image_file_del_\":\"new\\/Tokyo Revengers.jpg,\",\"name\":\"Blog 1\",\"slug\":null,\"description\":\"Description 1\",\"seo_title\":\"Seo Title1\",\"seo_des\":\"Seo Description1\",\"seo_key\":\"Seo Key1\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:26:06', '2025-01-08 08:26:06'),
+(421, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:26:07', '2025-01-08 08:26:07'),
+(422, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:27:18', '2025-01-08 08:27:18'),
+(423, 1, 'admin/blog-categories/create', 'GET', '127.0.0.1', '[]', '2025-01-08 08:27:28', '2025-01-08 08:27:28'),
+(424, 1, 'admin/blog-categories', 'POST', '127.0.0.1', '{\"name\":\"Blog 2\",\"slug\":null,\"description\":\"Description 2\",\"seo_title\":\"Seo Title 2\",\"seo_des\":\"Seo des 2\",\"seo_key\":\"Seo Keywords 2\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:28:09', '2025-01-08 08:28:09'),
+(425, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:28:09', '2025-01-08 08:28:09'),
+(426, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 08:29:43', '2025-01-08 08:29:43'),
+(427, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"blogs\",\"model_name\":\"App\\\\Models\\\\Blog\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\BlogController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"category_id\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"title\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"slug\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"short_content\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"view_user\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"alt\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"url\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"description\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_description\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_keyword\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"question\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"answer\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:32:58', '2025-01-08 08:32:58'),
+(428, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 08:32:58', '2025-01-08 08:32:58'),
+(429, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-01-08 08:33:15', '2025-01-08 08:33:15'),
+(430, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:33:19', '2025-01-08 08:33:19'),
+(431, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"search_terms\":null,\"title\":\"Blog Section\",\"icon\":\"icon-angle-right\",\"uri\":null,\"roles\":[\"1\",null],\"permission\":\"*\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:33:43', '2025-01-08 08:33:43'),
+(432, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:33:43', '2025-01-08 08:33:43'),
+(433, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:33:45', '2025-01-08 08:33:45'),
+(434, 1, 'admin/auth/menu/26/edit', 'GET', '127.0.0.1', '[]', '2025-01-08 08:33:49', '2025-01-08 08:33:49'),
+(435, 1, 'admin/auth/menu/26', 'PUT', '127.0.0.1', '{\"parent_id\":\"28\",\"search_terms\":null,\"title\":\"Blog-categories\",\"icon\":\"icon-file\",\"uri\":\"blog-categories\",\"roles\":[null],\"permission\":null,\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\",\"_method\":\"PUT\"}', '2025-01-08 08:33:54', '2025-01-08 08:33:54'),
+(436, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:33:54', '2025-01-08 08:33:54'),
+(437, 1, 'admin/auth/menu/27/edit', 'GET', '127.0.0.1', '[]', '2025-01-08 08:33:57', '2025-01-08 08:33:57'),
+(438, 1, 'admin/auth/menu/27', 'PUT', '127.0.0.1', '{\"parent_id\":\"28\",\"search_terms\":null,\"title\":\"Blogs\",\"icon\":\"icon-file\",\"uri\":\"blogs\",\"roles\":[null],\"permission\":null,\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\",\"_method\":\"PUT\"}', '2025-01-08 08:34:01', '2025-01-08 08:34:01'),
+(439, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:34:01', '2025-01-08 08:34:01'),
+(440, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:34:05', '2025-01-08 08:34:05'),
+(441, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"_order\":\"[{\\\"id\\\":\\\"1\\\"},{\\\"id\\\":\\\"2\\\",\\\"children\\\":[{\\\"id\\\":\\\"3\\\"},{\\\"id\\\":\\\"4\\\"},{\\\"id\\\":\\\"5\\\"},{\\\"id\\\":\\\"6\\\"},{\\\"id\\\":\\\"7\\\"}]},{\\\"id\\\":\\\"8\\\",\\\"children\\\":[{\\\"id\\\":\\\"9\\\"},{\\\"id\\\":\\\"10\\\"},{\\\"id\\\":\\\"11\\\"},{\\\"id\\\":\\\"12\\\"}]},{\\\"id\\\":\\\"13\\\"},{\\\"id\\\":\\\"28\\\",\\\"children\\\":[{\\\"id\\\":\\\"26\\\"},{\\\"id\\\":\\\"27\\\"}]},{\\\"id\\\":\\\"22\\\",\\\"children\\\":[{\\\"id\\\":\\\"21\\\"},{\\\"id\\\":\\\"20\\\"}]},{\\\"id\\\":\\\"17\\\",\\\"children\\\":[{\\\"id\\\":\\\"19\\\"},{\\\"id\\\":\\\"18\\\"}]},{\\\"id\\\":\\\"16\\\",\\\"children\\\":[{\\\"id\\\":\\\"14\\\"},{\\\"id\\\":\\\"15\\\"}]},{\\\"id\\\":\\\"23\\\"},{\\\"id\\\":\\\"24\\\"},{\\\"id\\\":\\\"25\\\"}]\",\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:34:16', '2025-01-08 08:34:16'),
+(442, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:34:17', '2025-01-08 08:34:17'),
+(443, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-01-08 08:34:19', '2025-01-08 08:34:19'),
+(444, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:34:22', '2025-01-08 08:34:22'),
+(445, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 08:34:24', '2025-01-08 08:34:24'),
+(446, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 08:34:25', '2025-01-08 08:34:25'),
+(447, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 08:35:15', '2025-01-08 08:35:15'),
+(448, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 08:37:45', '2025-01-08 08:37:45'),
+(449, 1, 'admin/blogs/create', 'GET', '127.0.0.1', '[]', '2025-01-08 08:37:50', '2025-01-08 08:37:50'),
+(450, 1, 'admin/blogs', 'POST', '127.0.0.1', '{\"category_id\":\"1\",\"search_terms\":null,\"title\":\"Blog Title 1\",\"slug\":null,\"short_content\":\"Short Description\",\"view_user\":\"23\",\"alt\":null,\"url\":null,\"description\":\"<p>Blog descrtpion 1<\\/p>\",\"seo_title\":\"blog 1 title\",\"seo_description\":\"blog des 1\",\"seo_keyword\":\"blog key 1\",\"question\":null,\"answer\":null,\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:39:11', '2025-01-08 08:39:11'),
+(451, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 08:39:11', '2025-01-08 08:39:11'),
+(452, 1, 'admin/blogs/create', 'GET', '127.0.0.1', '[]', '2025-01-08 08:39:14', '2025-01-08 08:39:14'),
+(453, 1, 'admin/blogs', 'POST', '127.0.0.1', '{\"category_id\":\"2\",\"search_terms\":null,\"title\":\"blog title 2\",\"slug\":null,\"short_content\":\"short descriptioin 2\",\"view_user\":\"44\",\"alt\":null,\"url\":null,\"description\":\"<p>Description 2<\\/p>\",\"seo_title\":\"seo title 2\",\"seo_description\":\"seo des 2\",\"seo_keyword\":\"seo key 2\",\"question\":null,\"answer\":null,\"_token\":\"eei5SrTrLkMUinWP9CEzdZwqegsq3n0768HnEV94\"}', '2025-01-08 08:40:11', '2025-01-08 08:40:11'),
+(454, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 08:40:12', '2025-01-08 08:40:12'),
+(455, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 08:52:38', '2025-01-08 08:52:38'),
+(456, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 08:52:48', '2025-01-08 08:52:48'),
+(457, 1, 'admin/blog-categories', 'GET', '127.0.0.1', '[]', '2025-01-08 23:38:13', '2025-01-08 23:38:13'),
+(458, 1, 'admin/blogs', 'GET', '127.0.0.1', '[]', '2025-01-08 23:38:28', '2025-01-08 23:38:28'),
+(459, 1, 'admin/blogs/create', 'GET', '127.0.0.1', '[]', '2025-01-08 23:38:36', '2025-01-08 23:38:36'),
+(460, 1, 'admin/blogs/create', 'GET', '127.0.0.1', '[]', '2025-01-09 00:13:33', '2025-01-09 00:13:33'),
+(461, 1, 'admin/blogs/create', 'GET', '127.0.0.1', '[]', '2025-01-10 03:45:26', '2025-01-10 03:45:26'),
+(462, 1, 'admin/blogs/create', 'GET', '127.0.0.1', '[]', '2025-01-10 03:45:34', '2025-01-10 03:45:34'),
+(463, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-10 04:58:51', '2025-01-10 04:58:51'),
+(464, 1, 'admin/tools/1/edit', 'GET', '127.0.0.1', '[]', '2025-01-10 04:58:55', '2025-01-10 04:58:55'),
+(465, 1, 'admin/tools/1', 'PUT', '127.0.0.1', '{\"tool_id\":\"1\",\"search_terms\":null,\"title\":\"Title 1\",\"slug\":\"title-1\",\"short_content\":\"<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.<\\/p>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.<\\/li>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.<\\/li>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.<\\/li>\\r\\n<\\/ul>\",\"description\":\"<h2>Benefits of SmallSEOTools&rsquo; Plagiarism Detector<\\/h2>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!<\\/p>\\r\\n\\r\\n<h3>Benefits of SmallSEOTools&rsquo; Plagiarism Detector<\\/h3>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!<\\/p>\\r\\n\\r\\n<p>Benefits of SmallSEOTools&rsquo; Plagiarism Detector<\\/p>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis vero assumenda unde laudantium voluptate vitae voluptates, aspernatur velit numquam alias!<\\/li>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque optio sed numquam voluptates quo pariatur obcaecati! Ex, labore natus.<\\/li>\\r\\n<\\/ul>\",\"alt\":null,\"url\":null,\"seo_title\":\"seo title\",\"seo_description\":\"seo des\",\"seo_keyword\":\"seo key\",\"question\":\"What are the most important Google ranking factors__\\r\\nHow do backlinks affect Google rankings__\\r\\nWhy is mobile-friendliness crucial for SEO__\\r\\nHow does page load speed impact SEO__\\r\\nHow can I optimize my website for Google ranking factors\",\"answer\":\"<p>The most important Google ranking factors include high-quality content, backlinks, mobile-friendliness, page load speed, and user experience (UX).<\\/p>__\\r\\n<p>Backlinks from authoritative and relevant websites signal trust and authority to Google, which can significantly boost your rankings.<\\/p>__\\r\\n<p>Google uses mobile-first indexing, meaning it prioritizes the mobile version of your site when ranking. A mobile-friendly design ensures better rankings and user experience.<\\/p>__\\r\\n<p>Fast-loading pages improve user experience and reduce bounce rates, which are key factors Google considers when ranking websites.<\\/p>__\\r\\n<p>Focus on creating quality content, optimizing technical SEO (meta tags, schema markup), building backlinks, improving site speed, and ensuring mobile compatibility.<\\/p>\",\"status\":\"1\",\"_token\":\"6JJEB8iwV0sZTS75VyUBn8oloQP8kIhS55trIEFQ\",\"_method\":\"PUT\"}', '2025-01-10 04:59:08', '2025-01-10 04:59:08'),
+(466, 1, 'admin/tools/1/edit', 'GET', '127.0.0.1', '[]', '2025-01-10 04:59:09', '2025-01-10 04:59:09'),
+(467, 1, 'admin/tools/1', 'PUT', '127.0.0.1', '{\"tool_id\":\"1\",\"search_terms\":null,\"title\":\"Title 1\",\"slug\":\"title-1\",\"short_content\":\"<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.<\\/p>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.<\\/li>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.<\\/li>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.<\\/li>\\r\\n<\\/ul>\",\"description\":\"<h2>Benefits of SmallSEOTools&rsquo; Plagiarism Detector<\\/h2>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!<\\/p>\\r\\n\\r\\n<h3>Benefits of SmallSEOTools&rsquo; Plagiarism Detector<\\/h3>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!<\\/p>\\r\\n\\r\\n<p>Benefits of SmallSEOTools&rsquo; Plagiarism Detector<\\/p>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis vero assumenda unde laudantium voluptate vitae voluptates, aspernatur velit numquam alias!<\\/li>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque optio sed numquam voluptates quo pariatur obcaecati! Ex, labore natus.<\\/li>\\r\\n<\\/ul>\",\"alt\":null,\"url\":null,\"seo_title\":\"seo title\",\"seo_description\":\"seo des\",\"seo_keyword\":\"seo key\",\"question\":\"What are the most important Google ranking factors__\\r\\nHow do backlinks affect Google rankings__\\r\\nWhy is mobile-friendliness crucial for SEO__\\r\\nHow does page load speed impact SEO__\\r\\nHow can I optimize my website for Google ranking factors\",\"answer\":\"<p>The most important Google ranking factors include high-quality content, backlinks, mobile-friendliness, page load speed, and user experience (UX).<\\/p>__\\r\\n<p>Backlinks from authoritative and relevant websites signal trust and authority to Google, which can significantly boost your rankings.<\\/p>__\\r\\n<p>Google uses mobile-first indexing, meaning it prioritizes the mobile version of your site when ranking. A mobile-friendly design ensures better rankings and user experience.<\\/p>__\\r\\n<p>Fast-loading pages improve user experience and reduce bounce rates, which are key factors Google considers when ranking websites.<\\/p>__\\r\\n<p>Focus on creating quality content, optimizing technical SEO (meta tags, schema markup), building backlinks, improving site speed, and ensuring mobile compatibility.<\\/p>\",\"status\":\"1\",\"_token\":\"6JJEB8iwV0sZTS75VyUBn8oloQP8kIhS55trIEFQ\",\"_method\":\"PUT\"}', '2025-01-10 05:00:08', '2025-01-10 05:00:08'),
+(468, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-10 05:00:08', '2025-01-10 05:00:08'),
+(469, 1, 'admin/tools', 'GET', '127.0.0.1', '[]', '2025-01-10 23:30:00', '2025-01-10 23:30:00'),
+(470, 1, 'admin/contact-uses', 'GET', '127.0.0.1', '[]', '2025-01-11 03:40:34', '2025-01-11 03:40:34'),
+(471, 1, 'admin/contact-uses', 'GET', '127.0.0.1', '[]', '2025-01-11 03:42:25', '2025-01-11 03:42:25'),
+(472, 1, 'admin/contact-uses', 'GET', '127.0.0.1', '[]', '2025-01-11 03:44:50', '2025-01-11 03:44:50'),
+(473, 1, 'admin/contact-uses', 'GET', '127.0.0.1', '[]', '2025-01-11 03:58:11', '2025-01-11 03:58:11'),
+(474, 1, 'admin/contact-uses', 'GET', '127.0.0.1', '[]', '2025-01-11 04:13:41', '2025-01-11 04:13:41');
 
 -- --------------------------------------------------------
 
@@ -507,7 +641,8 @@ CREATE TABLE `admin_role_menu` (
 INSERT INTO `admin_role_menu` (`role_id`, `menu_id`, `created_at`, `updated_at`) VALUES
 (1, 2, NULL, NULL),
 (1, 16, NULL, NULL),
-(1, 17, NULL, NULL);
+(1, 17, NULL, NULL),
+(1, 28, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -589,6 +724,72 @@ CREATE TABLE `admin_user_permissions` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `category_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `short_content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `view_user` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_keyword` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `twitter` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `linkedin` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `category_id`, `title`, `slug`, `short_content`, `view_user`, `image`, `alt`, `url`, `description`, `seo_title`, `seo_description`, `seo_keyword`, `question`, `answer`, `created_at`, `updated_at`, `twitter`, `facebook`, `instagram`, `youtube`, `linkedin`) VALUES
+(1, '1', 'Blog Title 1', 'blog-title-1', 'Short Description', '23', 'images/Gym.jpg', NULL, NULL, '<p>Blog descrtpion 1</p>', 'blog 1 title', 'blog des 1', 'blog key 1', NULL, NULL, '2025-01-08 08:39:11', '2025-01-08 08:39:11', NULL, NULL, NULL, NULL, NULL),
+(2, '2', 'blog title 2', 'blog-title-2', 'short descriptioin 2', '44', 'images/children-who-chase-lost-voices.png', NULL, NULL, '<p>Description 2</p>', 'seo title 2', 'seo des 2', 'seo key 2', NULL, NULL, '2025-01-08 08:40:11', '2025-01-08 08:40:11', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_category`
+--
+
+CREATE TABLE `blog_category` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blog_category`
+--
+
+INSERT INTO `blog_category` (`id`, `name`, `slug`, `description`, `seo_title`, `seo_des`, `seo_key`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Blog 1', 'blog-1', 'Description 1', 'Seo Title1', 'Seo Description1', 'Seo Key1', '', '2025-01-08 08:26:06', '2025-01-08 08:26:06'),
+(2, 'Blog 2', 'blog-2', 'Description 2', 'Seo Title 2', 'Seo des 2', 'Seo Keywords 2', NULL, '2025-01-08 08:28:09', '2025-01-08 08:28:09');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categorys`
 --
 
@@ -597,7 +798,7 @@ CREATE TABLE `categorys` (
   `category_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `short_content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `short_content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `view_user` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -683,7 +884,11 @@ INSERT INTO `contact_us` (`id`, `fname`, `lname`, `phone`, `email`, `select`, `d
 (1, 'Shoshana', 'Rigel', 'Plato', 'nasimahe@mailinator.com', 'Accounting & Finance', '1971-12-19', '928', '1735278180.jpg', '1974-05-13', 'Non rerum id ut ut', '2024-12-27 00:13:01', '2024-12-27 00:13:01'),
 (2, 'Kaushik', 'Dey', '08306449106', 'kaushik0077dey@gmail.com', 'Accounting & Finance', '2024-12-27', '12312', '1735278389.jpg', '2024-12-28', '13e23e32e23e32', '2024-12-27 00:16:29', '2024-12-27 00:16:29'),
 (3, 'Noble', 'Reed', 'Angela', 'fatyh@mailinator.com', 'Accounting & Finance', '1979-08-31', '973', '1735278478.jpg', '1980-02-26', 'Quos sit in ex vel', '2024-12-27 00:17:58', '2024-12-27 00:17:58'),
-(4, 'Haviva', 'Cara', '2131321321', 'pebame@mailinator.com', 'Accounting & Finance', '1982-12-07', '286', '1735297187.jpg', '2017-06-23', 'In ipsum veritatis', '2024-12-27 05:29:47', '2024-12-27 05:29:47');
+(4, 'Haviva', 'Cara', '2131321321', 'pebame@mailinator.com', 'Accounting & Finance', '1982-12-07', '286', '1735297187.jpg', '2017-06-23', 'In ipsum veritatis', '2024-12-27 05:29:47', '2024-12-27 05:29:47'),
+(5, 'kaushik', 'Dey', '8306449106', 'kaushik.dey.ahit@gmail.com', 'Accounting & Finance', '1986-02-10', '509', '1736586737.jpg', '1993-02-28', 'Facilis deleniti vol', '2025-01-11 03:42:17', '2025-01-11 03:42:17'),
+(6, 'kaushik', 'Dey', '8306449106', 'kaushik.dey.ahit@gmail.com', 'Accounting & Finance', '1977-07-28', '59', '1736586884.jpg', '2013-12-05', 'Et tenetur quae veli', '2025-01-11 03:44:44', '2025-01-11 03:44:44'),
+(7, 'kaushik', 'Dey', '8306449106', 'admin@admin.com', 'Accounting & Finance', '2001-02-04', '463', '1736587658.jpg', '2003-12-02', 'Consectetur tempore', '2025-01-11 03:57:38', '2025-01-11 03:57:38'),
+(8, 'kaushik', 'Dey', '8306449106', 'admin@admin.com', 'Accounting & Finance', '2003-08-13', '329', '1736587686.jpg', '1983-05-11', 'Qui do dolor sapient', '2025-01-11 03:58:06', '2025-01-11 03:58:06');
 
 -- --------------------------------------------------------
 
@@ -700,6 +905,27 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `question` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
+(1, 'Question1', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti tempora magnam fugiat assumenda quas vitae impedit adipisci minus omnis iure?', '2025-01-06 01:20:02', '2025-01-06 01:20:02');
 
 -- --------------------------------------------------------
 
@@ -730,7 +956,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2025_01_03_094057_create_service_category_table', 7),
 (11, '2025_01_03_111948_create_tool_category_table', 8),
 (12, '2025_01_03_115714_create_tool_table', 9),
-(13, '2025_01_04_063340_create_title_table', 10);
+(13, '2025_01_04_063340_create_title_table', 10),
+(14, '2025_01_06_064905_create_faq_table', 11),
+(15, '2025_01_08_135256_create_blog_category_table', 12),
+(16, '2025_01_08_140258_create_blogs_table', 13);
 
 -- --------------------------------------------------------
 
@@ -860,6 +1089,9 @@ CREATE TABLE `title` (
   `seo_title_policy` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des_policy` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_key_policy` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title_blog` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des_blog` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key_blog` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -868,8 +1100,8 @@ CREATE TABLE `title` (
 -- Dumping data for table `title`
 --
 
-INSERT INTO `title` (`id`, `seo_title_home`, `seo_des_home`, `seo_key_home`, `seo_title_about`, `seo_des_about`, `seo_key_about`, `seo_title_tool`, `seo_des_tool`, `seo_key_tool`, `seo_title_services`, `seo_des_services`, `seo_key_services`, `seo_title_category`, `seo_des_category`, `seo_key_category`, `seo_title_contact`, `seo_des_contact`, `seo_key_contact`, `seo_title_login`, `seo_des_login`, `seo_key_login`, `seo_title_signup`, `seo_des_signup`, `seo_key_signup`, `seo_title_policy`, `seo_des_policy`, `seo_key_policy`, `created_at`, `updated_at`) VALUES
-(1, 'home title', 'home description', 'home keyword', 'about title', 'about description', 'about keyword', 'tool title', 'tool description', 'tool keyword', 'service title', 'service description', 'service keyword', 'category title', 'category description', 'category keyword', 'contact title', 'contact description', 'contact keyword', 'login title', 'login description', 'login keyword', 'sign up title', 'sign up description', 'sign up keyword', 'policy title', 'policy description', 'policy keyword', '2025-01-04 01:09:08', '2025-01-04 01:09:08');
+INSERT INTO `title` (`id`, `seo_title_home`, `seo_des_home`, `seo_key_home`, `seo_title_about`, `seo_des_about`, `seo_key_about`, `seo_title_tool`, `seo_des_tool`, `seo_key_tool`, `seo_title_services`, `seo_des_services`, `seo_key_services`, `seo_title_category`, `seo_des_category`, `seo_key_category`, `seo_title_contact`, `seo_des_contact`, `seo_key_contact`, `seo_title_login`, `seo_des_login`, `seo_key_login`, `seo_title_signup`, `seo_des_signup`, `seo_key_signup`, `seo_title_policy`, `seo_des_policy`, `seo_key_policy`, `seo_title_blog`, `seo_des_blog`, `seo_key_blog`, `created_at`, `updated_at`) VALUES
+(1, 'home title', 'home description', 'home keyword', 'about title', 'about description', 'about keyword', 'tool title', 'tool description', 'tool keyword', 'service title', 'service description', 'service keyword', 'category title', 'category description', 'category keyword', 'contact title', 'contact description', 'contact keyword', 'login title', 'login description', 'login keyword', 'sign up title', 'sign up description', 'sign up keyword', 'policy title', 'policy description', 'policy keyword', 'blog Title', 'Blog Description', 'Blog Keywords', '2025-01-04 01:09:08', '2025-01-08 08:07:40');
 
 -- --------------------------------------------------------
 
@@ -890,8 +1122,8 @@ CREATE TABLE `tool` (
   `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_keyword` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `question` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `answer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `question` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` int(10) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -902,7 +1134,7 @@ CREATE TABLE `tool` (
 --
 
 INSERT INTO `tool` (`id`, `tool_id`, `title`, `slug`, `short_content`, `description`, `image`, `alt`, `url`, `seo_title`, `seo_description`, `seo_keyword`, `question`, `answer`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1', 'Title 1', 'title-1', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n</ul>', '<h2>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</h2>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<h3>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</h3>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<p>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</p>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis vero assumenda unde laudantium voluptate vitae voluptates, aspernatur velit numquam alias!</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque optio sed numquam voluptates quo pariatur obcaecati! Ex, labore natus.</li>\r\n</ul>', 'images/a-silent-voice.jpg', NULL, NULL, 'seo title', 'seo des', 'seo key', NULL, NULL, 1, '2025-01-03 23:42:00', '2025-01-03 23:59:52'),
+(1, '1', 'Title 1', 'title-1', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n</ul>', '<h2>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</h2>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<h3>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</h3>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<p>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</p>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis vero assumenda unde laudantium voluptate vitae voluptates, aspernatur velit numquam alias!</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque optio sed numquam voluptates quo pariatur obcaecati! Ex, labore natus.</li>\r\n</ul>', 'images/a-silent-voice.jpg', NULL, NULL, 'seo title', 'seo des', 'seo key', 'What are the most important Google ranking factors__\r\nHow do backlinks affect Google rankings__\r\nWhy is mobile-friendliness crucial for SEO__\r\nHow does page load speed impact SEO__\r\nHow can I optimize my website for Google ranking factors', '<p>The most important Google ranking factors include high-quality content, backlinks, mobile-friendliness, page load speed, and user experience (UX).</p>__\r\n<p>Backlinks from authoritative and relevant websites signal trust and authority to Google, which can significantly boost your rankings.</p>__\r\n<p>Google uses mobile-first indexing, meaning it prioritizes the mobile version of your site when ranking. A mobile-friendly design ensures better rankings and user experience.</p>__\r\n<p>Fast-loading pages improve user experience and reduce bounce rates, which are key factors Google considers when ranking websites.</p>__\r\n<p>Focus on creating quality content, optimizing technical SEO (meta tags, schema markup), building backlinks, improving site speed, and ensuring mobile compatibility.</p>', 1, '2025-01-03 23:42:00', '2025-01-10 05:00:08'),
 (2, '2', 'Title', 'title', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit earum illum sint provident odit aliquid laudantium. Libero, inventore eaque veritatis dolores voluptatem velit eveniet quibusdam expedita minus autem recusandae laborum ducimus exercitationem eum, tempore esse debitis? Dicta esse culpa minima inventore aspernatur nam sequi voluptas nesciunt laborum fugit. Assumenda, harum.</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos ab distinctio atque consequuntur ea? Laborum consectetur quaerat dolores harum.</li>\r\n</ul>', '<h2>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</h2>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<h3>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</h3>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<p>Benefits of SmallSEOTools&rsquo; Plagiarism Detector</p>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut exercitationem libero perspiciatis reiciendis veniam nihil maiores dolores nesciunt perferendis, sunt assumenda, quos modi accusamus deleniti obcaecati minus? Laborum expedita, pariatur molestias inventore officiis repudiandae ab iure adipisci consequatur voluptas quidem minus qui? Laboriosam eligendi reprehenderit distinctio in suscipit unde est!</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis vero assumenda unde laudantium voluptate vitae voluptates, aspernatur velit numquam alias!</li>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque optio sed numquam voluptates quo pariatur obcaecati! Ex, labore natus.</li>\r\n</ul>', 'images/Jujutsu Kaisen.jpg', 'image', NULL, 'Seo', 'seo des', 'seo key', NULL, NULL, 0, '2025-01-03 23:59:39', '2025-01-03 23:59:39');
 
 -- --------------------------------------------------------
@@ -928,7 +1160,8 @@ CREATE TABLE `tool_category` (
 
 INSERT INTO `tool_category` (`id`, `name`, `slug`, `seo_title`, `seo_des`, `seo_key`, `created_at`, `updated_at`) VALUES
 (1, 'Tool 1', 'tool-1', 'Seo Title', 'Seo Des', 'Seo Key', '2025-01-03 06:08:06', '2025-01-03 06:08:06'),
-(2, 'Tool 2', 'tool-2', 'Seo title 2', 'Seo Des 2', 'Seo key 2', '2025-01-03 06:08:37', '2025-01-03 06:08:37');
+(2, 'Tool 2', 'tool-2', 'Seo title 2', 'Seo Des 2', 'Seo key 2', '2025-01-03 06:08:37', '2025-01-03 06:08:37'),
+(3, 'Tool 3', 'tool-3', 'title', 'des', 'key', '2025-01-08 07:35:50', '2025-01-08 07:35:50');
 
 -- --------------------------------------------------------
 
@@ -1021,6 +1254,18 @@ ALTER TABLE `admin_user_permissions`
   ADD KEY `admin_user_permissions_user_id_permission_id_index` (`user_id`,`permission_id`);
 
 --
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_category`
+--
+ALTER TABLE `blog_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categorys`
 --
 ALTER TABLE `categorys`
@@ -1044,6 +1289,12 @@ ALTER TABLE `contact_us`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -1110,13 +1361,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin_menu`
 --
 ALTER TABLE `admin_menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `admin_operation_log`
 --
 ALTER TABLE `admin_operation_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=475;
 
 --
 -- AUTO_INCREMENT for table `admin_permissions`
@@ -1137,6 +1388,18 @@ ALTER TABLE `admin_users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `blog_category`
+--
+ALTER TABLE `blog_category`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `categorys`
 --
 ALTER TABLE `categorys`
@@ -1152,7 +1415,7 @@ ALTER TABLE `cat_category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1161,10 +1424,16 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1200,7 +1469,7 @@ ALTER TABLE `tool`
 -- AUTO_INCREMENT for table `tool_category`
 --
 ALTER TABLE `tool_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

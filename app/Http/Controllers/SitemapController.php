@@ -8,6 +8,8 @@ use \App\Models\CatCategory;
 use App\Models\Tool;
 use App\Models\ToolCategory;
 use App\Models\Service;
+use App\Models\Blog;
+use App\Models\BlogCategory;
 use App\Models\ServiceCategory;
 
 class SitemapController extends Controller
@@ -20,6 +22,8 @@ class SitemapController extends Controller
         // $toolCategory = ToolCategory::all();
         $service = Service::all();
         // $serviceCategory = ServiceCategory::all();
+        $blogCategory = BlogCategory::all();
+        $blog = Blog::all();
 
         return response()->view('sitemap', [
             'category' => $category,
@@ -27,6 +31,8 @@ class SitemapController extends Controller
             'tool' => $tool,
             // 'toolCategory' => $toolCategory
             'service' => $service,
+            'blog' => $blog,
+            'blogCategory' => $blogCategory,
             // 'serviceCategory' => $serviceCategory
 
            
