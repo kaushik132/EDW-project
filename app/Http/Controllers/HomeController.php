@@ -119,8 +119,11 @@ class HomeController extends Controller
         $seo_data['seo_description'] =$blogData->seo_description;
        $seo_data['keywords'] =$blogData->seo_keyword;
        $canocial ='https://codepin.org/blog-detail/'.$slug;
+
+
+       $letest_blog = Blog::latest()->limit(6)->get();
     
-        return view('blogDetails',compact('blogData','bloglist','blogCategory','seo_data','canocial'));
+        return view('blogDetails',compact('blogData','bloglist','blogCategory','seo_data','canocial','letest_blog'));
 
     }
 
