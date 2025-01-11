@@ -156,24 +156,13 @@
                 </div>
                 <div class="login-container mt-3">
                     <h5 class="text-center mb-4" style="color:#fa0009"><b>Popular Blog</b></h5>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
-                    <a href="#" class="text-decoration-none">
-                        <p class="our-categroy-link">&#8594; Research Paper Help</p>
-                    </a>
+@foreach ($resentBlog as $requentBlogs)
+    
+<a href="{{url('blog-detail/'.$requentBlogs->slug)}}" class="text-decoration-none">
+    <p class="our-categroy-link">&#8594; {{$requentBlogs->title}}</p>
+</a>
+@endforeach
+
                 </div>
 
             </div>

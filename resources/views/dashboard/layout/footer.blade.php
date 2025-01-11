@@ -85,11 +85,11 @@
     <div class="footer-bottom">
         <p>© EDW Solutions 2024</p>
         <nav>
-            <a href="#">Blog</a> |
+            <a href="{{url('blog')}}">Blog</a> |
             <a href="#">Terms & Conditions</a> |
             <a href="#">Article Galaxy AI FAQ</a> |
             <a href="{{url('policy')}}">Privacy Policy</a> |
-            <a href="#">Contact</a>
+            <a href="{{url('contactus')}}">Contact</a>
         </nav>
     </div>
 </footer>
