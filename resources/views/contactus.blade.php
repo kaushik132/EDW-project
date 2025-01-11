@@ -154,6 +154,7 @@
                                 @error('message')
                                  {{$message}}
                                 @enderror
+                                </span>
                         </div>
                       </div>
 
